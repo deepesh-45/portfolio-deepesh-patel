@@ -70,7 +70,7 @@ export default function Chatbox() {
               <Bot className="w-5 h-5 text-slate-900" />
             </div>
             <div>
-              <h3 className="text-white font-semibold text-sm">Deepesh's AI Assistant</h3>
+              <h3 className="text-white font-semibold text-sm">Deepesh&apos;s AI Assistant</h3>
               <p className="text-[#06b6d4] text-xs">Online</p>
             </div>
           </div>

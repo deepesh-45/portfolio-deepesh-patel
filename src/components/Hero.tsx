@@ -1,56 +1,9 @@
-'use client';
-
-import React, { useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial } from '@react-three/drei';
+import React from 'react';
 import Image from 'next/image';
-
-function ParticleField(props: any) {
-  const ref = useRef<any>(null);
-  
-  // Manually generate points in a sphere to avoid maath NaN issues
-  const sphere = useMemo(() => {
-    const positions = new Float32Array(5000 * 3);
-    for (let i = 0; i < 5000; i++) {
-      // Random point in sphere using spherical coordinates
-      const u = Math.random();
-      const v = Math.random();
-      const theta = u * 2.0 * Math.PI;
-      const phi = Math.acos(2.0 * v - 1.0);
-      const r = Math.cbrt(Math.random()) * 1.5;
-      
-      const sinPhi = Math.sin(phi);
-      positions[i * 3] = r * sinPhi * Math.cos(theta);
-      positions[i * 3 + 1] = r * sinPhi * Math.sin(theta);
-      positions[i * 3 + 2] = r * Math.cos(phi);
-    }
-    return positions;
-  }, []);
-
-  useFrame((state, delta) => {
-    if (ref.current) {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
-    }
-  });
-
-  return (
-    <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
-        <PointMaterial transparent color="#06b6d4" size={0.005} sizeAttenuation={true} depthWrite={false} />
-      </Points>
-    </group>
-  );
-}
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-[#031427]">
-      <div className="absolute inset-0 z-0">
-        <Canvas camera={{ position: [0, 0, 1] }}>
-          <ParticleField />
-        </Canvas>
-      </div>
+    <section className="relative w-full h-screen overflow-hidden bg-transparent">
       
       <div className="relative z-10 flex items-center justify-center w-full h-full px-6">
         <div className="flex flex-col md:flex-row items-center justify-between p-8 md:p-12 w-full max-w-4xl bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">

@@ -6,10 +6,12 @@ import Certifications from "@/components/Certifications";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Chatbox from "@/components/Chatbox";
+import Background3D from "@/components/Background3D";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#031427] text-[#d3e4fe] font-sans selection:bg-[#06b6d4] selection:text-white pb-24">
+    <main className="relative min-h-screen bg-transparent text-[#d3e4fe] font-sans selection:bg-[#06b6d4] selection:text-white pb-24">
+      <Background3D />
       <Hero />
       <About />
       <Skills />
