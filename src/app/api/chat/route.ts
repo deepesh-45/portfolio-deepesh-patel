@@ -53,7 +53,7 @@ export async function POST(req: Request) {
     if (!process.env.GEMINI_API_KEY) {
       // Fallback if no key is set yet
       return NextResponse.json({ 
-        reply: "My backend AI is currently disabled (missing API key). Deepesh is likely setting this up right now!" 
+        reply: "My backend AI is currently disabled (missing API key in Vercel). Deepesh is likely setting this up right now!" 
       });
     }
 
