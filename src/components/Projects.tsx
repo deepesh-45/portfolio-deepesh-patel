@@ -7,15 +7,15 @@ const projects = [
     category: "Machine Learning, Data Analysis",
     description: "Built a python-based book recommendation tool using a Kaggle dataset. Used Pandas and NumPy to clean the data, and used Cosine Similarity to calculate text vectors and match user preferences.",
     image: "/project_books.png",
-    link: "#", // User will provide link
+    link: "https://github.com/deepesh-45", 
     date: "January '26"
   },
   {
     title: "Laptop Recommender System",
     category: "Machine Learning, Web Deployment",
     description: "Created a laptop recommendation application with a Python backend and an interactive Streamlit frontend. Built filtering logic to rank laptops based on user specs and deployed live on Hugging Face.",
-    image: null, // Placeholder for now
-    link: "#",
+    image: null, 
+    link: "https://deepesh-45-my-laptop.hf.space/",
     date: "February '26"
   },
   {
@@ -23,7 +23,7 @@ const projects = [
     category: "Algorithms, Web Development",
     description: "Developed a web-based visualizer using vanilla HTML, CSS, and JavaScript to show how classic sorting algorithms (like Bubble, Merge, and Quick Sort) work in real time. Added a custom UI for speeds/sizes.",
     image: null,
-    link: "#",
+    link: "https://sortify-silk.vercel.app/",
     date: "May '26"
   },
   {
@@ -31,7 +31,7 @@ const projects = [
     category: "AI, Full-Stack",
     description: "Vibe-coded a serverless journaling web app using JavaScript frameworks and Firestore. Integrated the Gemini API to build a supportive AI companion for stress relief, alongside poetry generation tools.",
     image: null,
-    link: "#",
+    link: "https://deepesh-45.github.io/Reflect-AI/",
     date: "June '26"
   }
 ];
