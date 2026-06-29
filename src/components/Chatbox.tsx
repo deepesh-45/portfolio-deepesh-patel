@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X, Send, Bot, User } from 'lucide-react';
+import { MessageSquare, X, Send, Bot } from 'lucide-react';
 
 export default function Chatbox() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +38,7 @@ export default function Chatbox() {
         ...prev, 
         { role: 'assistant', content: data.reply }
       ]);
-    } catch (error) {
+    } catch {
       setMessages(prev => [
         ...prev, 
         { role: 'assistant', content: "I'm temporarily unavailable. Please reach out via the contact section instead." }
