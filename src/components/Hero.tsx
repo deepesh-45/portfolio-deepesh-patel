@@ -1,14 +1,31 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
-import * as random from 'maath/random/dist/maath-random.esm';
 import Image from 'next/image';
 
 function ParticleField(props: any) {
   const ref = useRef<any>(null);
-  const [sphere] = React.useState(() => random.inSphere(new Float32Array(5000), { radius: 1.5 }));
+  
+  // Manually generate points in a sphere to avoid maath NaN issues
+  const sphere = useMemo(() => {
+    const positions = new Float32Array(5000 * 3);
+    for (let i = 0; i < 5000; i++) {
+      // Random point in sphere using spherical coordinates
+      const u = Math.random();
+      const v = Math.random();
+      const theta = u * 2.0 * Math.PI;
+      const phi = Math.acos(2.0 * v - 1.0);
+      const r = Math.cbrt(Math.random()) * 1.5;
+      
+      const sinPhi = Math.sin(phi);
+      positions[i * 3] = r * sinPhi * Math.cos(theta);
+      positions[i * 3 + 1] = r * sinPhi * Math.sin(theta);
+      positions[i * 3 + 2] = r * Math.cos(phi);
+    }
+    return positions;
+  }, []);
 
   useFrame((state, delta) => {
     if (ref.current) {
