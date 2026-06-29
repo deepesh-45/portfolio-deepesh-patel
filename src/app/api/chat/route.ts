@@ -60,10 +60,16 @@ export async function POST(req: Request) {
     const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     
     // Format history for Gemini API
-    const formattedHistory = history.map((msg: any) => ({
+    let formattedHistory = history.map((msg: any) => ({
       role: msg.role === 'assistant' ? 'model' : 'user',
       parts: [{ text: msg.content }]
     }));
+
+    // Gemini requires the first message to be from the user.
+    // Filter out the initial greeting from the assistant.
+    while (formattedHistory.length > 0 && formattedHistory[0].role === 'model') {
+      formattedHistory.shift();
+    }
 
     const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash',
