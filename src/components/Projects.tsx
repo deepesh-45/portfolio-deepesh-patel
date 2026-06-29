@@ -22,7 +22,7 @@ const projects = [
     title: "Sortify: Sorting Visualizer",
     category: "Algorithms, Web Development",
     description: "Developed a web-based visualizer using vanilla HTML, CSS, and JavaScript to show how classic sorting algorithms (like Bubble, Merge, and Quick Sort) work in real time. Added a custom UI for speeds/sizes.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
     link: "https://sortify-silk.vercel.app/",
     date: "May '26"
   },
