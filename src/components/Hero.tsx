@@ -66,12 +66,12 @@ export default function Hero() {
               Specializing in machine learning models, predictive analytics, and seamless AI integrations.
             </p>
             <div className="flex gap-4 justify-center md:justify-start">
-              <button className="px-6 py-3 bg-[#06b6d4] hover:bg-[#4cd7f6] text-slate-900 font-semibold rounded-lg transition-colors shadow-[0_0_15px_rgba(6,182,212,0.5)] hover:shadow-[0_0_25px_rgba(76,215,246,0.8)]">
+              <a href="#projects" className="px-6 py-3 bg-[#06b6d4] hover:bg-[#4cd7f6] text-slate-900 font-semibold rounded-lg transition-colors shadow-[0_0_15px_rgba(6,182,212,0.5)] hover:shadow-[0_0_25px_rgba(76,215,246,0.8)]">
                 View Projects
-              </button>
-              <button className="px-6 py-3 bg-transparent border border-white/20 text-white hover:bg-white/10 font-semibold rounded-lg transition-colors">
-                Get in Touch
-              </button>
+              </a>
+              <a href="/Deepesh_Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-transparent border border-white/20 text-white hover:bg-white/10 font-semibold rounded-lg transition-colors">
+                Download Resume
+              </a>
             </div>
           </div>
           
