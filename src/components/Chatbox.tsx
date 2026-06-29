@@ -25,14 +25,27 @@ export default function Chatbox() {
     setInput('');
     setIsLoading(true);
 
-    // Mock API call for now (Frontend only)
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: input, history: messages })
+      });
+
+      const data = await response.json();
+      
       setMessages(prev => [
         ...prev, 
-        { role: 'assistant', content: "I'm currently running in mock mode. Once the backend is wired up, I'll provide real answers based on Deepesh's resume!" }
+        { role: 'assistant', content: data.reply }
       ]);
+    } catch (error) {
+      setMessages(prev => [
+        ...prev, 
+        { role: 'assistant', content: "I'm temporarily unavailable. Please reach out via the contact section instead." }
+      ]);
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   return (
