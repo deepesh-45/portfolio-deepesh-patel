@@ -14,7 +14,7 @@ const projects = [
     title: "Laptop Recommender System",
     category: "Machine Learning, Web Deployment",
     description: "Created a laptop recommendation application with a Python backend and an interactive Streamlit frontend. Built filtering logic to rank laptops based on user specs and deployed live on Hugging Face.",
-    image: null, 
+    image: "/project_laptop.png", 
     link: "https://deepesh-45-my-laptop.hf.space/",
     date: "February '26"
   },
@@ -30,7 +30,7 @@ const projects = [
     title: "Reflect AI: Your AI Companion",
     category: "AI, Full-Stack",
     description: "Vibe-coded a serverless journaling web app using JavaScript frameworks and Firestore. Integrated the Gemini API to build a supportive AI companion for stress relief, alongside poetry generation tools.",
-    image: null,
+    image: "/project_reflect.png",
     link: "https://deepesh-45.github.io/Reflect-AI/",
     date: "June '26"
   }
