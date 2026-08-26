@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+deepesh-patel-portfolio
+scratch
 
 # Editor directories and files
 .vscode/*
