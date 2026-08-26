@@ -219,6 +219,9 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem('lang-mode', lang)
+    document.title = lang === 'hi' 
+      ? 'दीपेश पटेल — एआई & मशीन लर्निंग इंजीनियर' 
+      : 'Deepesh Patel — AI & Machine Learning Engineer'
   }, [lang])
 
   const toggleTheme = () => {
