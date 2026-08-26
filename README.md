@@ -1,32 +1,38 @@
-# React + TypeScript + Vite
+# Deepesh Patel — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+An interactive, high-performance personal portfolio built with **React**, **TypeScript**, **Vite**, **Tailwind CSS v4**, and **React Bits** UI components.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dynamic Interactive Components**: Built with custom React Bits components including `SpotlightCard`, `TextPressure`, `ShinyText`, and WebGL `GradientWaves`.
+- **Custom Color Hunt Palette**: Configured with the organic Sage & Deep Forest Charcoal palette (`#9CB080`, `#618764`, `#2B5748`, `#273338`) for both Light and Dark themes.
+- **Responsive Top Sticky Dock Navbar**: A top-aligned floating dock navigation bar with standard Lucide React icons, dual-language toggles (`EN` / `हिंदी`), and light/dark theme switches.
+- **Full-Width Cards**: Spanning full-width single column layouts across About Me, Technical Skills, Featured Projects, Certifications, Experience, and Contact.
+- **AI Assistant Chatbot**: Integrated dual-language interactive chatbot (`Chatbox.tsx`) capable of answering questions about projects, achievements, skills, and background.
+- **Mobile Optimized**: Designed for all mobile viewports ranging from 360px up to Pro Max flagships.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React 19 + TypeScript + Vite
+- **Styling**: Tailwind CSS v4 + Vanilla CSS Design System
+- **Icons**: Lucide React
+- **Graphics & Animation**: Three.js / WebGL Waves & CSS Keyframe Sweeps
 
-## Expanding the Oxlint configuration
+## 📜 Development & Deployment
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+```bash
+# Install dependencies
+npm install
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+# Run local development server
+npm run dev
+
+# Build for production
+npm run build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## 📬 Contact
+
+- **Email**: pateldeepesh1408@gmail.com
+- **LinkedIn**: [deepesh-patel-564b35398](https://www.linkedin.com/in/deepesh-patel-564b35398)
+- **GitHub**: [deepesh-45](https://github.com/deepesh-45)
