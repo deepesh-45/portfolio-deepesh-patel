@@ -48,12 +48,11 @@ export const MaskedHeading: React.FC<MaskedHeadingProps> = ({
   style = {},
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(trigger === 'auto');
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     if (trigger === 'auto') {
-      setIsVisible(true);
       return;
     }
 

@@ -96,7 +96,7 @@ const projects = [
     category: 'AI, Full-Stack Journaling & Gemini Integration',
     description:
       'Vibe-coded a serverless journaling web app using JavaScript frameworks and Firestore. Integrated the Gemini API to build a supportive AI companion for stress relief, alongside poetry generation tools.',
-    image: '/project_reflect.png',
+    image: '/project-reflect-ai.png',
     link: 'https://deepesh-45.github.io/Reflect-AI/',
     date: 'June 2026',
     tags: ['Gemini API', 'Firestore', 'JavaScript', 'Serverless AI'],
@@ -116,7 +116,7 @@ const projects = [
     category: 'Machine Learning & Web Deployment',
     description:
       'Created a laptop recommendation application with a Python backend and an interactive Streamlit frontend. Built filtering logic to rank laptops based on user specs and deployed live on Hugging Face.',
-    image: '/project_laptop.png',
+    image: '/project-laptop-recommender.png',
     link: 'https://deepesh-45-my-laptop.hf.space/',
     date: 'Feb 2026',
     tags: ['Python', 'Streamlit', 'Scikit-Learn', 'Hugging Face'],
@@ -126,7 +126,7 @@ const projects = [
     category: 'Machine Learning & Data Analysis',
     description:
       'Built a Python-based book recommendation tool using a Kaggle dataset. Used Pandas and NumPy to clean data, and applied Cosine Similarity to calculate text vectors and match user preferences.',
-    image: '/project_books.png',
+    image: '/project-books-recommender.png',
     link: 'https://github.com/deepesh-45',
     date: 'Jan 2026',
     tags: ['Python', 'Pandas', 'NumPy', 'Cosine Similarity'],
@@ -397,8 +397,8 @@ function App() {
             </button>
 
             <a
-              href="/Deepesh_Resume.pdf"
-              download="Deepesh_Patel_Resume.pdf"
+              href="/deepesh-patel-resume.pdf"
+              download="deepesh-patel-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               style={{
