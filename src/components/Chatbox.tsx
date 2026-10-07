@@ -36,9 +36,9 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ['education', 'college', 'acropolis', 'cgpa', 'degree', 'gpa', 'university', 'btech', 'b.tech'],
     answerEn:
-      "Deepesh is pursuing B.Tech in Artificial Intelligence & Machine Learning (Aug 2024 – Aug 2028) at Acropolis Institute of Technology and Research, maintaining a strong 7.96 CGPA.",
+      "Deepesh is pursuing B.Tech in Artificial Intelligence & Machine Learning (2022 – 2026) at Acropolis Institute of Technology and Research, maintaining a strong 7.64 CGPA.",
     answerHi:
-      "दीपेश एकोपोलिस इंस्टीट्यूट ऑफ टेक्नोलॉजी एंड रिसर्च से एआई एंड एमएल में बी.टेक (2024-2028) कर रहे हैं, और उनका वर्तमान सीजीपीए 7.96 है।",
+      "दीपेश एकोपोलिस इंस्टीट्यूट ऑफ टेक्नोलॉजी एंड रिसर्च से एआई एंड एमएल में बी.टेक (2022-2026) कर रहे हैं, और उनका वर्तमान सीजीपीए 7.64 है।",
   },
   {
     keywords: ['project', 'projects', 'reflect', 'sortify', 'laptop', 'books', 'work', 'app', 'repo'],
@@ -142,7 +142,7 @@ export const Chatbox = ({ currentTheme, lang, isOpen: controlledIsOpen, onToggle
           padding: '12px 20px',
           borderRadius: '9999px',
           backgroundColor: currentTheme.primary,
-          color: currentTheme.bgCanvas,
+          color: '#FFFFFF',
           border: `1px solid ${currentTheme.hairlineBorder}`,
           boxShadow: '0 12px 30px rgba(0,0,0,0.18)',
           cursor: 'pointer',
@@ -164,7 +164,7 @@ export const Chatbox = ({ currentTheme, lang, isOpen: controlledIsOpen, onToggle
           }}
         />
         <Bot size={18} />
-        <span>{lang === 'hi' ? 'प्राण AI' : 'PRANA AI'}</span>
+        <span>{lang === 'hi' ? 'एआई असिस्टेंट' : 'AI Assistant'}</span>
       </button>
 
       {/* Slide-over Editorial Drawer / Chat Window */}
@@ -414,7 +414,7 @@ export const Chatbox = ({ currentTheme, lang, isOpen: controlledIsOpen, onToggle
                 height: '40px',
                 borderRadius: '12px',
                 backgroundColor: currentTheme.primary,
-                color: currentTheme.bgCanvas,
+                color: '#FFFFFF',
                 border: 'none',
                 display: 'flex',
                 alignItems: 'center',

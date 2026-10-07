@@ -60,55 +60,55 @@ const skillCategories = [
 const projects = [
   {
     number: '01',
-    title: 'Reflect AI: Your AI Companion',
-    category: 'Serverless AI & Emotional Wellness',
-    categoryHi: 'सर्वरलेस एआई और मेंटल वेलनेस',
+    title: 'Reflect AI — Mental Wellness Journal',
+    category: 'AI Web Application',
+    categoryHi: 'एआई वेब एप्लिकेशन',
     description:
-      'A serverless mindful journaling web application powered by the Gemini API and Cloud Firestore. Built to provide an empathetic conversational companion for emotional reflection, paired with creative thought synthesis tools.',
+      'An AI-powered mindful journaling application that provides empathetic conversational support and guided reflection. Built with the Gemini API and Google Cloud Firestore.',
     descriptionHi:
-      'जेमिनी एपीआई और क्लाउड फायरस्टोर द्वारा संचालित एक सर्वरलेस जर्नलिंग वेब एप्लिकेशन। तनाव मुक्ति और भावनात्मक चिंतन के लिए एक संवेदनशील एआई साथी प्रदान करता है।',
+      'जेमिनी एपीआई और गूगल फायरस्टोर पर आधारित एक जर्नलिंग ऐप। आत्म-चिंतन और मानसिक स्वास्थ्य के लिए संवेदनशील एआई सहायता प्रदान करता है।',
     image: '/project-reflect-ai.jpg',
     link: 'https://deepesh-45.github.io/Reflect-AI/',
-    tags: ['Gemini API', 'Cloud Firestore', 'Serverless AI', 'JavaScript'],
+    tags: ['Gemini API', 'Cloud Firestore', 'JavaScript', 'Tailwind CSS'],
   },
   {
     number: '02',
     title: 'Laptop Recommender System',
-    category: 'Machine Learning & Interactive App',
-    categoryHi: 'मशीन लर्निंग और इंटरएक्टिव ऐप',
+    category: 'Machine Learning Web App',
+    categoryHi: 'मशीन लर्निंग वेब ऐप',
     description:
-      'An end-to-end laptop recommendation system featuring a Python data processing pipeline and an intuitive Streamlit interface. Evaluates multiple hardware vectors and budget parameters to deliver ranked recommendations.',
+      'A data-driven recommendation engine that suggests suitable laptops based on user specifications, budget, and performance needs. Deployed live on Hugging Face Spaces with Streamlit.',
     descriptionHi:
-      'पाइथन और स्ट्रीमलिट द्वारा निर्मित एक लैपटॉप अनुशंसा एप्लिकेशन। उपयोगकर्ता की आवश्यकताओं और बजट के अनुसार शीर्ष लैपटॉप को रैंक करने के लिए एमएल एल्गोरिदम का उपयोग करता है।',
+      'पाइथन और स्ट्रीमलिट से बना एक एमएल ऐप, जो उपयोगकर्ता के बजट और तकनीकी आवश्यकताओं के अनुसार सबसे अच्छे लैपटॉप की सिफारिश करता है।',
     image: '/project-laptop-recommender.jpg',
     link: 'https://deepesh-45-my-laptop.hf.space/',
     tags: ['Python', 'Streamlit', 'Scikit-Learn', 'Hugging Face'],
   },
   {
     number: '03',
-    title: 'Books Recommender System',
-    category: 'Content-Based Vector Recommendation',
-    categoryHi: 'कंटेंट-बेस्ड वेक्टर अनुशंसा प्रणाली',
+    title: 'Book Recommendation Engine',
+    category: 'Natural Language Processing',
+    categoryHi: 'नेचुरल लैंग्वेज प्रोसेसिंग',
     description:
-      'A recommendation pipeline leveraging Cosine Similarity and vector space modeling across extensive literary datasets. Implements statistical data cleaning, tokenization, and multi-dimensional preference matching.',
+      'A content-based recommendation system that suggests books using cosine similarity and TF-IDF vectorization across a dataset of over 2,000 titles.',
     descriptionHi:
-      'कागल डेटासेट पर कोसाइन सिमिलैरिटी और वेक्टर स्पेस मॉडलिंग का उपयोग करके बनाई गई पुस्तक अनुशंसा प्रणाली। डेटा की सफाई और वेक्टर मिलान द्वारा सटीक सुझाव प्रस्तुत करती है।',
+      'कोसाइन सिमिलैरिटी और टीएफ-आईडीएफ पर आधारित पुस्तक अनुशंसा प्रणाली, जो पाठकों की रुचि के अनुसार संबंधित पुस्तकों का सटीक सुझाव देती है।',
     image: '/project-books-recommender.jpg',
     link: 'https://github.com/deepesh-45',
     tags: ['Python', 'Pandas', 'NumPy', 'Cosine Similarity'],
   },
   {
     number: '04',
-    title: 'Sortify: Sorting Visualizer',
-    category: 'Algorithmic Architecture & Audio-Visuals',
-    categoryHi: 'एल्गोरिदम और इंटरएक्टिव विजुअलाइज़र',
+    title: 'Sortify — Algorithm Visualizer',
+    category: 'Interactive Data Structures & Algorithms',
+    categoryHi: 'इंटरएक्टिव डेटा स्ट्रक्चर्स & एल्गोरिदम',
     description:
-      'An interactive educational visualizer that renders classic sorting algorithms (Merge, Quick, Bubble, Insertion) in real time with dynamic speed controls and customizable array distributions.',
+      'An interactive tool that animates sorting algorithms (Bubble Sort, Merge Sort, Quick Sort) step by step with real-time speed adjustments.',
     descriptionHi:
-      'शास्त्रीय सॉर्टिंग एल्गोरिदम (मर्ज, क्विक, बबल, इंसर्शन) को रीयल-टाइम में समझाने वाला एक इंटरएक्टिव वेब विजुअलाइज़र। गति नियंत्रण और कस्टम डेटा आकारों के साथ समृद्ध।',
+      'बबल सॉर्ट, मर्ज सॉर्ट और क्विक सॉर्ट जैसे एल्गोरिदम को चरण-दर-चरण समझने के लिए एक इंटरएक्टिव विजुअलाइज़र वेब टूल।',
     image: '/project-sortify-visualizer.jpg',
     link: 'https://sortify-silk.vercel.app/',
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'Algorithms'],
+    tags: ['JavaScript', 'Algorithms', 'CSS3', 'Data Structures'],
   },
 ]
 
@@ -117,13 +117,11 @@ const certifications = [
     title: 'Python for Data Science',
     titleHi: 'पाइथन फॉर डेटा साइंस',
     issuer: 'NPTEL — IIT Madras',
-    date: "April '26",
+    date: 'April 2024',
     link: 'https://drive.google.com/file/d/129esc7_P75SsjB8D_p7F77VLrfqwu9gl/view?usp=drivesdk',
-    badge: 'Course Topper (Top 2%)',
-    badgeHi: 'कोर्स टॉपर (टॉप 2%)',
-    score: '83% Elite Score',
+    score: '83% (Elite Gold · Top 1%)',
     description:
-      'Mastered dataset wrangling with Pandas, multi-dimensional array operations with NumPy, statistical visualizations with Matplotlib & Seaborn, and foundational machine learning classifiers with Scikit-Learn.',
+      'Comprehensive data science coursework covering data manipulation with Pandas and NumPy, data visualization, and applied machine learning models.',
   },
   {
     title: 'Programming in Python',
@@ -131,11 +129,9 @@ const certifications = [
     issuer: 'NPTEL',
     date: 'Certified',
     link: 'https://drive.google.com/file/d/1faWANaSfdHVw-NuoBNUGa8uKIgCTwtzb/view?usp=drivesdk',
-    badge: 'Verified Credential',
-    badgeHi: 'सत्यापित प्रमाणपत्र',
-    score: 'Certified Proficiency',
+    score: 'Certified Grade',
     description:
-      'Demonstrated rigorous computational problem solving, data structures, algorithm design, recursion, and object-oriented architecture in Python.',
+      'In-depth training in Python programming, fundamental data structures, algorithm design, and computational problem solving.',
   },
   {
     title: 'Artificial Intelligence Foundation',
@@ -143,11 +139,9 @@ const certifications = [
     issuer: 'Certified Training Program',
     date: 'Certified',
     link: 'https://drive.google.com/file/d/1ZXgpFm-6zOqmFNNEhPzyS7yEOvrnaNBO/view?usp=drivesdk',
-    badge: 'Core AI Distinction',
-    badgeHi: 'कोर एआई डिस्टिंक्शन',
     score: 'Advanced Grade',
     description:
-      'In-depth training on neural network foundations, heuristic search algorithms, intelligent agent architectures, and machine learning methodologies.',
+      'Foundational concepts of artificial intelligence, search algorithms, knowledge representation, and machine learning paradigms.',
   },
 ]
 
@@ -416,7 +410,7 @@ export default function App() {
               alignItems: 'center',
             }}
           >
-            {/* Left Content Column (Keeps clear of avatar on the right) */}
+            {/* Left Content Column (Clean, simple, no decorative legends) */}
             <div
               style={{
                 width: '100%',
@@ -427,55 +421,16 @@ export default function App() {
                 textAlign: 'left',
               }}
             >
-              {/* Status Badge */}
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '9px',
-                  padding: '7px 20px',
-                  borderRadius: '9999px',
-                  backgroundColor: 'rgba(57, 19, 27, 0.85)',
-                  border: `1px solid ${theme.hairlineBorder}`,
-                  color: theme.primary,
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontSize: '0.74rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  marginBottom: '1.25rem',
-                  backdropFilter: 'blur(16px)',
-                  WebkitBackdropFilter: 'blur(16px)',
-                  boxShadow: '0 4px 18px rgba(0, 0, 0, 0.45)',
-                }}
-              >
-                <span
-                  style={{
-                    width: '8px',
-                    height: '8px',
-                    borderRadius: '50%',
-                    backgroundColor: '#E86F76',
-                    boxShadow: '0 0 10px #E86F76',
-                  }}
-                  className="animate-ping-subtle"
-                />
-                <span>
-                  {lang === 'hi'
-                    ? '✦ पोर्टफोलियो 2026 · एआई और मशीन लर्निंग इंजीनियर'
-                    : '✦ PORTFOLIO 2026 · AI & MACHINE LEARNING ENGINEER'}
-                </span>
-              </div>
-
-              {/* Monumental Condensed Headline: Namaskaram */}
+              {/* Monumental Greeting */}
               <h1
                 style={{
                   fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', 'Syne', serif",
                   fontSize: 'clamp(3.8rem, 8.5vw, 6.8rem)',
-                  lineHeight: 0.98,
+                  lineHeight: 1.0,
                   fontWeight: 800,
                   letterSpacing: lang === 'hi' ? '0.01em' : '-0.025em',
                   color: theme.primary,
-                  margin: '0 0 1rem 0',
+                  margin: '0 0 0.85rem 0',
                   textShadow: '0 12px 42px rgba(212, 155, 158, 0.28)',
                   userSelect: 'none',
                 }}
@@ -483,30 +438,29 @@ export default function App() {
                 {lang === 'hi' ? 'नमस्कार.' : 'Namaskaram.'}
               </h1>
 
-              {/* Secondary Headline: Role & Specialization */}
+              {/* Role & Name (Clear & Concrete) */}
               <h2
                 style={{
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: 'clamp(1.4rem, 2.6vw, 2.2rem)',
-                  lineHeight: 1.2,
+                  fontSize: 'clamp(1.5rem, 2.8vw, 2.3rem)',
+                  lineHeight: 1.25,
                   fontWeight: 800,
                   letterSpacing: '-0.015em',
-                  textTransform: 'uppercase',
                   color: theme.secondary,
                   margin: '0 0 1.25rem 0',
                 }}
               >
                 {lang === 'hi'
-                  ? 'मैं एक एआई और मशीन लर्निंग इंजीनियर हूँ'
-                  : "I'M AN AI & MACHINE LEARNING ENGINEER"}
+                  ? 'मैं दीपेश पटेल हूँ — एआई & मशीन लर्निंग इंजीनियर'
+                  : "I'm Deepesh Patel — AI & Machine Learning Engineer"}
               </h2>
 
-              {/* Subtitle / Narrative Copy */}
+              {/* Clear, Concise, Courteous Intro (7 C's) */}
               <p
                 style={{
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontSize: 'clamp(1.02rem, 1.8vw, 1.2rem)',
-                  lineHeight: 1.68,
+                  fontSize: 'clamp(1.05rem, 1.8vw, 1.22rem)',
+                  lineHeight: 1.65,
                   color: theme.subTextColor,
                   maxWidth: '560px',
                   fontWeight: 400,
@@ -514,18 +468,18 @@ export default function App() {
                 }}
               >
                 {lang === 'hi'
-                  ? 'मेरी डिजिटल दुनिया में आपका स्वागत है। बुद्धिमान प्रेडिक्टिव सिस्टम्स, वास्तविक समय के एल्गोरिदम और डिजिटल अनुभवों का निर्माण।'
-                  : "Welcome to my digital space. Crafting intelligent predictive systems, real-time algorithms & spatial digital architectures."}
+                  ? 'मेरे पोर्टफोलियो में आपका स्वागत है। मैं व्यावहारिक मशीन लर्निंग मॉडल, आधुनिक वेब एप्लिकेशन्स और डेटा-संचालित समाधान विकसित करता हूँ।'
+                  : 'Welcome to my portfolio! I build practical machine learning systems, smart web applications, and data-driven solutions.'}
               </p>
 
-              {/* Action Buttons */}
+              {/* Clean Action Buttons */}
               <div
                 style={{
                   display: 'flex',
                   flexWrap: 'wrap',
                   alignItems: 'center',
                   gap: '14px',
-                  marginBottom: '2.25rem',
+                  marginBottom: '2rem',
                 }}
               >
                 <a
@@ -533,16 +487,14 @@ export default function App() {
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '10px',
-                    padding: '15px 32px',
+                    gap: '8px',
+                    padding: '14px 28px',
                     borderRadius: '12px',
                     backgroundColor: theme.ctaRose,
                     color: '#FFFFFF',
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontSize: '0.9rem',
+                    fontSize: '0.92rem',
                     fontWeight: 700,
-                    letterSpacing: '0.04em',
-                    textTransform: 'uppercase',
                     textDecoration: 'none',
                     boxShadow: '0 10px 28px rgba(184, 114, 119, 0.45)',
                     transition: 'all 0.25s ease',
@@ -556,7 +508,7 @@ export default function App() {
                     e.currentTarget.style.transform = 'translateY(0)'
                   }}
                 >
-                  <span>{lang === 'hi' ? 'चुनिंदा प्रोजेक्ट्स देखें' : 'Explore Selected Works'}</span>
+                  <span>{lang === 'hi' ? 'प्रोजेक्ट्स देखें' : 'View Projects'}</span>
                   <ArrowDown size={17} />
                 </a>
 
@@ -567,17 +519,15 @@ export default function App() {
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '10px',
-                    padding: '15px 30px',
+                    gap: '8px',
+                    padding: '14px 28px',
                     borderRadius: '12px',
                     backgroundColor: 'rgba(57, 19, 27, 0.75)',
                     border: `1.5px solid ${theme.hairlineBorder}`,
                     color: theme.secondary,
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontSize: '0.9rem',
+                    fontSize: '0.92rem',
                     fontWeight: 700,
-                    letterSpacing: '0.04em',
-                    textTransform: 'uppercase',
                     textDecoration: 'none',
                     backdropFilter: 'blur(16px)',
                     WebkitBackdropFilter: 'blur(16px)',
@@ -595,34 +545,27 @@ export default function App() {
                   }}
                 >
                   <FileText size={17} />
-                  <span>{lang === 'hi' ? 'बायोडाटा / सीवी डाउनलोड करें' : 'Download Monograph / CV'}</span>
+                  <span>{lang === 'hi' ? 'रिज्यूम डाउनलोड करें' : 'Download Resume'}</span>
                 </a>
               </div>
 
-              {/* Location Pill & Coordinates Overlay */}
+              {/* Simple Location Note (Clear & Courteous) */}
               <div
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  padding: '10px 22px',
-                  borderRadius: '9999px',
-                  backgroundColor: 'rgba(47, 14, 20, 0.82)',
-                  border: `1px solid ${theme.hairlineBorder}`,
                   color: theme.subTextColor,
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontSize: '0.84rem',
+                  fontSize: '0.88rem',
                   fontWeight: 500,
-                  backdropFilter: 'blur(14px)',
-                  WebkitBackdropFilter: 'blur(14px)',
-                  boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
                 }}
               >
-                <span style={{ color: theme.primary, fontSize: '0.95rem' }}>📍</span>
+                <span style={{ color: theme.primary }}>📍</span>
                 <span>
                   {lang === 'hi'
-                    ? 'इंदौर और बेंगलुरु · अवसरों व सहयोग के लिए उपलब्ध'
-                    : 'Indore & Bengaluru · Open for ML & Software Roles'}
+                    ? 'इंदौर, भारत · नए अवसरों और सहयोग के लिए उपलब्ध'
+                    : 'Indore, India · Open to new roles and collaborations'}
                 </span>
               </div>
             </div>
@@ -651,57 +594,43 @@ export default function App() {
               gap: '2.5rem',
             }}
           >
-            <div>
-              <span
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'baseline',
+                justifyContent: 'space-between',
+                gap: '1rem',
+              }}
+            >
+              <h2
                 style={{
-                  fontSize: '0.72rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  color: theme.primary,
+                  fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', serif",
+                  fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)',
+                  fontWeight: 800,
+                  letterSpacing: '-0.02em',
+                  color: theme.secondary,
+                  margin: 0,
                 }}
               >
-                {lang === 'hi' ? 'अनुशासन और प्रदर्शन' : 'Disciplinary Footprint'}
-              </span>
-              <div
+                {lang === 'hi' ? 'प्रमुख उपलब्धियां' : 'Key Highlights'}
+              </h2>
+              <p
                 style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  alignItems: 'baseline',
-                  justifyContent: 'space-between',
-                  gap: '1rem',
-                  marginTop: '0.35rem',
+                  maxWidth: '460px',
+                  margin: 0,
+                  fontSize: '1rem',
+                  color: theme.subTextColor,
+                  lineHeight: 1.6,
                 }}
               >
-                <h2
-                  style={{
-                    fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', serif",
-                    fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)',
-                    fontWeight: 800,
-                    letterSpacing: '-0.02em',
-                    color: theme.secondary,
-                    margin: 0,
-                  }}
-                >
-                  {lang === 'hi' ? 'क्यूरेटेड मेट्रिक्स & उपलब्धियां' : 'Curated Metric & Practicum'}
-                </h2>
-                <p
-                  style={{
-                    maxWidth: '460px',
-                    margin: 0,
-                    fontSize: '0.98rem',
-                    color: theme.subTextColor,
-                    lineHeight: 1.6,
-                  }}
-                >
-                  {lang === 'hi'
-                    ? 'सैद्धांतिक गणितीय सटीकता और व्यवहार्य एआई सिस्टम्स का सामंजस्य।'
-                    : 'A focused practice uniting algorithmic rigorousness with human-centered machine learning systems.'}
-                </p>
-              </div>
+                {lang === 'hi'
+                  ? 'मेरी शैक्षणिक पृष्ठभूमि और तकनीकी कार्यों का संक्षिप्त विवरण।'
+                  : 'A brief overview of my academic achievements and deployed projects.'}
+              </p>
             </div>
 
-            {/* Metric Cards Grid */}
+            {/* Metric Cards Grid (Clean cards without decorative legends) */}
             <div
               style={{
                 display: 'grid',
@@ -720,38 +649,39 @@ export default function App() {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  minHeight: '230px',
+                  minHeight: '210px',
                 }}
               >
-                <span
+                <div
                   style={{
-                    fontSize: '0.72rem',
-                    fontWeight: 600,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
+                    fontFamily: "'Oswald', 'Syne', sans-serif",
+                    fontSize: 'clamp(3.4rem, 6vw, 4.8rem)',
+                    fontWeight: 700,
+                    letterSpacing: '-0.02em',
                     color: theme.primary,
+                    lineHeight: 1,
                   }}
                 >
-                  {lang === 'hi' ? 'आईआईटी मद्रास डिस्टिंक्शन' : 'Academic Distinction'}
-                </span>
-                <div style={{ margin: '1rem 0' }}>
-                  <span
+                  Top 1%
+                </div>
+                <div>
+                  <h3
                     style={{
-                      fontFamily: "'Oswald', 'Syne', sans-serif",
-                      fontSize: 'clamp(3.4rem, 6vw, 4.8rem)',
+                      fontFamily: "'Playfair Display', serif",
+                      fontSize: '1.25rem',
                       fontWeight: 700,
-                      letterSpacing: '-0.02em',
-                      color: theme.primary,
+                      color: theme.secondary,
+                      margin: '0.75rem 0 0.5rem 0',
                     }}
                   >
-                    Top 2%
-                  </span>
+                    {lang === 'hi' ? 'NPTEL IIT मद्रास टॉपर' : 'NPTEL IIT Madras Topper'}
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '0.92rem', color: theme.subTextColor, lineHeight: 1.55 }}>
+                    {lang === 'hi'
+                      ? "'Python for Data Science' कोर्स में 83% एलिट गोल्ड स्कोर के साथ टॉप 1% में।"
+                      : 'Achieved an 83% Elite Gold score in the Python for Data Science certification.'}
+                  </p>
                 </div>
-                <p style={{ margin: 0, fontSize: '0.92rem', color: theme.subTextColor, lineHeight: 1.55 }}>
-                  {lang === 'hi'
-                    ? "NPTEL IIT मद्रास 'Python for Data Science' कोर्स टॉपर 83% एलिट स्कोर के साथ।"
-                    : 'NPTEL IIT Madras Course Topper in Python for Data Science with an 83% certified score.'}
-                </p>
               </div>
 
               {/* Metric 2 */}
@@ -765,38 +695,39 @@ export default function App() {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  minHeight: '230px',
+                  minHeight: '210px',
                 }}
               >
-                <span
+                <div
                   style={{
-                    fontSize: '0.72rem',
-                    fontWeight: 600,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
+                    fontFamily: "'Oswald', 'Syne', sans-serif",
+                    fontSize: 'clamp(3.4rem, 6vw, 4.8rem)',
+                    fontWeight: 700,
+                    letterSpacing: '-0.02em',
                     color: theme.primary,
+                    lineHeight: 1,
                   }}
                 >
-                  {lang === 'hi' ? 'परिनियोजित सिस्टम्स' : 'Intelligent Deployments'}
-                </span>
-                <div style={{ margin: '1rem 0' }}>
-                  <span
+                  4+
+                </div>
+                <div>
+                  <h3
                     style={{
-                      fontFamily: "'Oswald', 'Syne', sans-serif",
-                      fontSize: 'clamp(3.4rem, 6vw, 4.8rem)',
+                      fontFamily: "'Playfair Display', serif",
+                      fontSize: '1.25rem',
                       fontWeight: 700,
-                      letterSpacing: '-0.02em',
-                      color: theme.primary,
+                      color: theme.secondary,
+                      margin: '0.75rem 0 0.5rem 0',
                     }}
                   >
-                    4+
-                  </span>
+                    {lang === 'hi' ? 'लाइव एमएल प्रोजेक्ट्स' : 'Live ML Projects'}
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '0.92rem', color: theme.subTextColor, lineHeight: 1.55 }}>
+                    {lang === 'hi'
+                      ? 'हगिंग फेस, गिटहब और स्ट्रीमलिट पर लाइव परिनियोजित एंड-टू-एंड वेब ऐप्स।'
+                      : 'End-to-end applications deployed on Hugging Face Spaces, GitHub, and Streamlit.'}
+                  </p>
                 </div>
-                <p style={{ margin: 0, fontSize: '0.92rem', color: theme.subTextColor, lineHeight: 1.55 }}>
-                  {lang === 'hi'
-                    ? 'हगिंग फेस, वेरसेल और गिटहब पर लाइव परिनियोजित अनुशंसा इंजन व जेनरेटिव एआई ऐप्स।'
-                    : 'Deployed machine learning systems, recommender engines, and real-time interactive visualizers.'}
-                </p>
               </div>
 
               {/* Metric 3 */}
@@ -810,38 +741,39 @@ export default function App() {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  minHeight: '230px',
+                  minHeight: '210px',
                 }}
               >
-                <span
+                <div
                   style={{
-                    fontSize: '0.72rem',
-                    fontWeight: 600,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
+                    fontFamily: "'Oswald', 'Syne', sans-serif",
+                    fontSize: 'clamp(3.4rem, 6vw, 4.8rem)',
+                    fontWeight: 700,
+                    letterSpacing: '-0.02em',
                     color: theme.primary,
+                    lineHeight: 1,
                   }}
                 >
-                  {lang === 'hi' ? 'अकादमिक निरंतरता' : 'Academic Standing'}
-                </span>
-                <div style={{ margin: '1rem 0' }}>
-                  <span
+                  7.64
+                </div>
+                <div>
+                  <h3
                     style={{
-                      fontFamily: "'Oswald', 'Syne', sans-serif",
-                      fontSize: 'clamp(3.4rem, 6vw, 4.8rem)',
+                      fontFamily: "'Playfair Display', serif",
+                      fontSize: '1.25rem',
                       fontWeight: 700,
-                      letterSpacing: '-0.02em',
-                      color: theme.primary,
+                      color: theme.secondary,
+                      margin: '0.75rem 0 0.5rem 0',
                     }}
                   >
-                    7.96
-                  </span>
+                    {lang === 'hi' ? 'बी.टेक सीजीपीए' : 'B.Tech CGPA'}
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '0.92rem', color: theme.subTextColor, lineHeight: 1.55 }}>
+                    {lang === 'hi'
+                      ? 'एक्रोपोलिस इंस्टीट्यूट ऑफ टेक्नोलॉजी एंड रिसर्च में एआई & एमएल ब्रांच।'
+                      : 'B.Tech in Artificial Intelligence & Machine Learning at Acropolis Institute (2022–2026).'}
+                  </p>
                 </div>
-                <p style={{ margin: 0, fontSize: '0.92rem', color: theme.subTextColor, lineHeight: 1.55 }}>
-                  {lang === 'hi'
-                    ? 'एकोपोलिस इंस्टीट्यूट ऑफ टेक्नोलॉजी एंड रिसर्च में बी.टेक एआई & एमएल में स्थिर सीजीपीए।'
-                    : 'Consistent CGPA in B.Tech Computer Science & AI/ML at Acropolis Institute of Technology & Research.'}
-                </p>
               </div>
             </div>
           </div>
@@ -870,47 +802,36 @@ export default function App() {
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                alignItems: 'flex-end',
+                alignItems: 'baseline',
                 justifyContent: 'space-between',
                 gap: '1rem',
               }}
             >
-              <div>
-                <span
-                  style={{
-                    fontSize: '0.72rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.12em',
-                    textTransform: 'uppercase',
-                    color: theme.primary,
-                  }}
-                >
-                  Archive 2026
-                </span>
-                <h2
-                  style={{
-                    fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', serif",
-                    fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)',
-                    fontWeight: 800,
-                    letterSpacing: '-0.02em',
-                    color: theme.secondary,
-                    margin: '0.35rem 0 0 0',
-                  }}
-                >
-                  {lang === 'hi' ? 'विशेष परियोजनाएं और सिस्टम' : 'Selected Spatial & AI Canvases'}
-                </h2>
-              </div>
-              <span
+              <h2
                 style={{
-                  fontSize: '0.78rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  color: theme.primary,
+                  fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', serif",
+                  fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)',
+                  fontWeight: 800,
+                  letterSpacing: '-0.02em',
+                  color: theme.secondary,
+                  margin: 0,
                 }}
               >
-                {lang === 'hi' ? '04 प्रमुख निर्माण' : '04 Works in Spotlight'}
-              </span>
+                {lang === 'hi' ? 'प्रमुख प्रोजेक्ट्स' : 'Featured Projects'}
+              </h2>
+              <p
+                style={{
+                  maxWidth: '460px',
+                  margin: 0,
+                  fontSize: '1rem',
+                  color: theme.subTextColor,
+                  lineHeight: 1.6,
+                }}
+              >
+                {lang === 'hi'
+                  ? 'मशीन लर्निंग, एनएलपी और वेब डेवलपमेंट पर आधारित मेरे प्रोजेक्ट्स।'
+                  : 'Practical projects in machine learning, NLP, and interactive web tools.'}
+              </p>
             </div>
 
             {/* Asymmetrical Editorial Project Showcase */}
@@ -992,17 +913,16 @@ export default function App() {
                       className="lg:col-span-5"
                     >
                       <div>
-                        <span
+                        <div
                           style={{
-                            fontSize: '0.72rem',
+                            fontSize: '0.85rem',
                             fontWeight: 600,
-                            letterSpacing: '0.1em',
-                            textTransform: 'uppercase',
                             color: theme.primary,
+                            marginBottom: '0.35rem',
                           }}
                         >
-                          Project {proj.number} · {lang === 'hi' ? proj.categoryHi : proj.category}
-                        </span>
+                          {lang === 'hi' ? proj.categoryHi : proj.category}
+                        </div>
                         <h3
                           style={{
                             fontFamily: lang === 'hi' ? "'Rozha One', serif" : "'Playfair Display', serif",
@@ -1010,7 +930,7 @@ export default function App() {
                             fontWeight: 800,
                             letterSpacing: '-0.02em',
                             color: theme.secondary,
-                            margin: '0.4rem 0 0 0',
+                            margin: 0,
                           }}
                         >
                           {proj.title}
@@ -1071,7 +991,7 @@ export default function App() {
                             transition: 'opacity 0.2s ease',
                           }}
                         >
-                          <span>{lang === 'hi' ? 'लाइव डेमो / कोड देखें' : 'View Comprehensive Case Study'}</span>
+                          <span>{lang === 'hi' ? 'लाइव डेमो / कोड देखें' : 'View Live Project'}</span>
                           <ArrowUpRight size={16} />
                         </a>
                       </div>
@@ -1105,18 +1025,15 @@ export default function App() {
               gap: '2.5rem',
             }}
           >
-            <div>
-              <span
-                style={{
-                  fontSize: '0.72rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  color: theme.primary,
-                }}
-              >
-                Curated Skill Matrix
-              </span>
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'baseline',
+                justifyContent: 'space-between',
+                gap: '1rem',
+              }}
+            >
               <h2
                 style={{
                   fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', serif",
@@ -1124,11 +1041,24 @@ export default function App() {
                   fontWeight: 800,
                   letterSpacing: '-0.02em',
                   color: theme.secondary,
-                  margin: '0.35rem 0 0 0',
+                  margin: 0,
                 }}
               >
-                {lang === 'hi' ? 'तकनीकी दक्षता और कौशल' : 'Technical Competencies'}
+                {lang === 'hi' ? 'तकनीकी कौशल' : 'Skills & Technologies'}
               </h2>
+              <p
+                style={{
+                  maxWidth: '460px',
+                  margin: 0,
+                  fontSize: '1rem',
+                  color: theme.subTextColor,
+                  lineHeight: 1.6,
+                }}
+              >
+                {lang === 'hi'
+                  ? 'प्रोग्रामिंग भाषाएं, फ्रेमवर्क और टूल्स जिनका उपयोग मैं करता हूँ।'
+                  : 'Tools, libraries, and programming languages I use to build systems.'}
+              </p>
             </div>
 
             <div
@@ -1207,18 +1137,15 @@ export default function App() {
               gap: '2.5rem',
             }}
           >
-            <div>
-              <span
-                style={{
-                  fontSize: '0.72rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  color: theme.primary,
-                }}
-              >
-                Verified Credentials
-              </span>
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'baseline',
+                justifyContent: 'space-between',
+                gap: '1rem',
+              }}
+            >
               <h2
                 style={{
                   fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', serif",
@@ -1226,11 +1153,24 @@ export default function App() {
                   fontWeight: 800,
                   letterSpacing: '-0.02em',
                   color: theme.secondary,
-                  margin: '0.35rem 0 0 0',
+                  margin: 0,
                 }}
               >
-                {lang === 'hi' ? 'प्रमाणपत्र और विशिष्टताएं' : 'Certifications & Honors'}
+                {lang === 'hi' ? 'प्रमाणपत्र' : 'Certifications'}
               </h2>
+              <p
+                style={{
+                  maxWidth: '460px',
+                  margin: 0,
+                  fontSize: '1rem',
+                  color: theme.subTextColor,
+                  lineHeight: 1.6,
+                }}
+              >
+                {lang === 'hi'
+                  ? 'आईआईटी मद्रास और प्रमाणित संस्थानों से प्राप्त प्रमाणपत्र।'
+                  : 'Verified coursework from IIT Madras and accredited programs.'}
+              </p>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -1251,22 +1191,8 @@ export default function App() {
                   }}
                 >
                   <div style={{ flex: '1 1 340px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-                      <span
-                        style={{
-                          padding: '4px 12px',
-                          borderRadius: '9999px',
-                          backgroundColor: 'rgba(184, 114, 119, 0.35)',
-                          fontSize: '0.72rem',
-                          fontWeight: 700,
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.08em',
-                          color: theme.primary,
-                        }}
-                      >
-                        {lang === 'hi' ? c.badgeHi : c.badge}
-                      </span>
-                      <span style={{ fontSize: '0.8rem', color: theme.subTextColor }}>{c.issuer}</span>
+                    <div style={{ fontSize: '0.88rem', color: theme.primary, fontWeight: 600, marginBottom: '6px' }}>
+                      {c.issuer} · {c.date}
                     </div>
 
                     <h3
@@ -1352,33 +1278,18 @@ export default function App() {
               gap: '2.25rem',
             }}
           >
-            <span
+            <h2
               style={{
-                fontSize: '0.72rem',
-                fontWeight: 600,
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                color: theme.primary,
-              }}
-            >
-              {lang === 'hi' ? 'दर्शन और दृष्टिकोण' : 'Engineering Philosophy & Stance'}
-            </span>
-
-            <blockquote
-              style={{
-                fontFamily: lang === 'hi' ? "'Rozha One', serif" : "'Playfair Display', serif",
-                fontSize: 'clamp(1.75rem, 3.8vw, 2.75rem)',
-                lineHeight: 1.35,
-                fontWeight: 700,
-                fontStyle: 'italic',
+                fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', serif",
+                fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)',
+                fontWeight: 800,
+                letterSpacing: '-0.02em',
                 color: theme.secondary,
                 margin: 0,
               }}
             >
-              {lang === 'hi'
-                ? '“इंजीनियरिंग में सच्ची बुद्धिमत्ता जटिलता में नहीं, बल्कि ऐसे एल्गोरिदम बनाने में है जो सहज, मानवीय और उपयोगी महसूस हों।”'
-                : '“True intelligence in engineering is not complexity for its own sake, but crafting algorithms and systems that feel effortless, intuitive, and profoundly human.”'}
-            </blockquote>
+              {lang === 'hi' ? 'मेरे बारे में' : 'About Me'}
+            </h2>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
               <div
@@ -1428,10 +1339,10 @@ export default function App() {
                 maxWidth: '780px',
               }}
             >
-              <p style={{ margin: '0 0 1rem 0' }}>
+              <p style={{ margin: 0, fontSize: '1.05rem', lineHeight: 1.75 }}>
                 {lang === 'hi'
-                  ? 'मैं एकोपोलिस इंस्टीट्यूट ऑफ टेक्नोलॉजी एंड रिसर्च में आर्टिफिशियल इंटेलिजेंस और मशीन लर्निंग का छात्र हूँ। कोडिंग और मॉडल आर्किटेक्चर के अलावा, मैं मानसिक दृढ़ता और अनुशासन विकसित करने के लिए नियमित लंबी दूरी की दौड़ का अभ्यास करता हूँ।'
-                  : 'I am an AI & Machine Learning undergraduate at Acropolis Institute of Technology and Research. Beyond code, I practice regular long-distance running to build discipline, mental resilience, and steady focus.'}
+                  ? 'मैं एक्रोपोलिस इंस्टीट्यूट ऑफ टेक्नोलॉजी एंड रिसर्च, इंदौर में आर्टिफिशियल इंटेलिजेंस और मशीन लर्निंग का बी.टेक छात्र हूँ (2022–2026)। मैं मशीन लर्निंग मॉडल्स, अनुशंसा प्रणालियों और आधुनिक वेब एप्लिकेशन्स को विकसित करने में रुचि रखता हूँ। कोडिंग के अतिरिक्त, मैं मानसिक दृढ़ता और एकाग्रता के लिए नियमित लंबी दूरी की दौड़ का अभ्यास करता हूँ।'
+                  : 'I am a B.Tech student in Artificial Intelligence and Machine Learning at Acropolis Institute of Technology and Research, Indore (2022–2026). I build predictive machine learning models, recommender systems, and responsive web applications. Outside of technology, I regularly practice long-distance running to cultivate discipline, consistency, and focus.'}
               </p>
             </div>
           </div>
@@ -1514,23 +1425,10 @@ export default function App() {
                     >
                       PRANA AI
                     </span>
-                    <span
-                      style={{
-                        padding: '3px 10px',
-                        borderRadius: '9999px',
-                        backgroundColor: 'rgba(72, 25, 35, 0.65)',
-                        fontSize: '0.68rem',
-                        fontWeight: 700,
-                        letterSpacing: '0.08em',
-                        textTransform: 'uppercase',
-                        color: theme.primary,
-                      }}
-                    >
-                      v2.4 Core
-                    </span>
+
                   </div>
                   <div style={{ fontSize: '0.82rem', color: theme.subTextColor }}>
-                    {lang === 'hi' ? 'दीपेश पटेल का डिजिटल कोपायलट' : 'Deepesh Patel’s Spatial Copilot & Computational Twin'}
+                    {lang === 'hi' ? 'दीपेश पटेल का इंटरएक्टिव एआई असिस्टेंट' : 'Deepesh Patel’s Interactive AI Assistant'}
                   </div>
                 </div>
               </div>
@@ -1539,35 +1437,31 @@ export default function App() {
                 style={{
                   display: 'flex',
                   flexWrap: 'wrap',
-                  gap: '1.5rem',
-                  fontSize: '0.78rem',
+                  gap: '1.25rem',
+                  fontSize: '0.85rem',
                   color: theme.subTextColor,
                   alignItems: 'center',
                 }}
               >
                 <div>
-                  Model: <strong style={{ color: theme.primary }}>Gemini Dual-Engine</strong>
-                </div>
-                <div>
-                  Resonance: <strong style={{ color: theme.primary }}>99.4% Sync</strong>
+                  Powered by <strong style={{ color: theme.secondary }}>Gemini API</strong>
                 </div>
                 <button
                   onClick={() => setIsChatOpen(true)}
                   style={{
-                    padding: '10px 22px',
+                    padding: '10px 24px',
                     borderRadius: '9999px',
                     backgroundColor: theme.ctaRose,
                     color: '#FFFFFF',
-                    fontSize: '0.78rem',
+                    fontSize: '0.85rem',
                     fontWeight: 600,
-                    letterSpacing: '0.06em',
-                    textTransform: 'uppercase',
                     border: 'none',
                     cursor: 'pointer',
                     boxShadow: '0 8px 20px rgba(184, 114, 119, 0.4)',
+                    transition: 'all 0.2s ease',
                   }}
                 >
-                  {lang === 'hi' ? 'कोपायलट खोलें' : 'Launch Copilot'}
+                  {lang === 'hi' ? 'चैट शुरू करें' : 'Start Chat'}
                 </button>
               </div>
             </div>

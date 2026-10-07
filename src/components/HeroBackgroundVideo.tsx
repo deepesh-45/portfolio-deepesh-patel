@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { Play, Pause, Sparkles } from 'lucide-react'
+import { Play, Pause } from 'lucide-react'
 
 interface HeroBackgroundVideoProps {
   videoSrc?: string
@@ -89,7 +89,7 @@ export const HeroBackgroundVideo = ({
           width: '100%',
           height: '100%',
           objectFit: 'cover',
-          objectPosition: '84% center', // Anchors avatar gracefully on the right half
+          objectPosition: '84% center', // Anchors avatar cleanly on the right half
           display: 'block',
           transform: 'translateZ(0) scale(1.02)',
           WebkitTransform: 'translateZ(0) scale(1.02)',
@@ -158,20 +158,16 @@ export const HeroBackgroundVideo = ({
         }}
       />
 
-      {/* Floating Interactive Badge & Controls in Bottom Right */}
+      {/* Discreet Video Control Pill in Bottom Right (No decorative legends) */}
       <div
         style={{
           position: 'absolute',
-          bottom: '28px',
-          right: 'clamp(20px, 4vw, 48px)',
+          bottom: '24px',
+          right: 'clamp(16px, 3vw, 40px)',
           zIndex: 20,
-          display: 'flex',
-          alignItems: 'center',
-          gap: '12px',
           pointerEvents: 'auto',
         }}
       >
-        {/* Play / Pause Toggle Pill */}
         <button
           onClick={togglePlay}
           aria-label={isPlaying ? 'Pause Background Video' : 'Play Background Video'}
@@ -181,8 +177,8 @@ export const HeroBackgroundVideo = ({
             gap: '6px',
             padding: '7px 14px',
             borderRadius: '9999px',
-            backgroundColor: 'rgba(38, 11, 15, 0.85)',
-            border: '1px solid rgba(212, 155, 158, 0.35)',
+            backgroundColor: 'rgba(38, 11, 15, 0.8)',
+            border: '1px solid rgba(212, 155, 158, 0.3)',
             color: '#F5DBD5',
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             fontSize: '0.72rem',
@@ -199,43 +195,13 @@ export const HeroBackgroundVideo = ({
             e.currentTarget.style.borderColor = '#D49B9E'
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(38, 11, 15, 0.85)'
-            e.currentTarget.style.borderColor = 'rgba(212, 155, 158, 0.35)'
+            e.currentTarget.style.backgroundColor = 'rgba(38, 11, 15, 0.8)'
+            e.currentTarget.style.borderColor = 'rgba(212, 155, 158, 0.3)'
           }}
         >
           {isPlaying ? <Pause size={11} fill="#F5DBD5" /> : <Play size={11} fill="#F5DBD5" />}
           <span>{isPlaying ? (lang === 'hi' ? 'रोकें' : 'Pause') : (lang === 'hi' ? 'चलाएं' : 'Play')}</span>
         </button>
-
-        {/* 3D Namaskaram Avatar Status Badge */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '7px 16px',
-            borderRadius: '9999px',
-            backgroundColor: 'rgba(38, 11, 15, 0.85)',
-            border: '1px solid rgba(212, 155, 158, 0.35)',
-            color: '#D49B9E',
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontSize: '0.72rem',
-            fontWeight: 600,
-            letterSpacing: '0.05em',
-            textTransform: 'uppercase',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
-            boxShadow: '0 4px 16px rgba(0,0,0,0.4)',
-          }}
-          className="hidden sm:flex"
-        >
-          <Sparkles size={12} className="text-[#D49B9E]" />
-          <span>
-            {lang === 'hi'
-              ? '3D स्थानिक अवतार · नमस्कार मुद्रा'
-              : '3D Spatial Avatar · Namaskaram Mudra'}
-          </span>
-        </div>
       </div>
     </div>
   )
