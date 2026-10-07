@@ -9,7 +9,7 @@ import {
   Linkedin,
   Mail,
 } from 'lucide-react'
-import HeroVideoPlayer from './components/HeroVideoPlayer'
+import HeroBackgroundVideo from './components/HeroBackgroundVideo'
 import MandalaWatermark from './components/MandalaWatermark'
 import Chatbox from './components/Chatbox'
 
@@ -385,151 +385,147 @@ export default function App() {
       {/* Main Content Area */}
       <main style={{ paddingTop: '80px', width: '100%' }}>
         {/* =========================================================================
-            SECTION 1: HERO (EXACT REPLICA OF USER REFERENCE DESIGN)
+            SECTION 1: CINEMATIC BACKGROUND VIDEO HERO (3D AVATAR ON RIGHT, CRISP TEXT ON LEFT)
             ========================================================================= */
         <section
           id="home"
           style={{
             position: 'relative',
             width: '100%',
+            minHeight: 'calc(100vh - 80px)',
+            display: 'flex',
+            alignItems: 'center',
             overflow: 'hidden',
-            padding: 'clamp(2.5rem, 5vw, 4.5rem) clamp(1.25rem, 4vw, 4rem) clamp(3.5rem, 6vw, 5.5rem)',
+            backgroundColor: '#260B0F',
             zIndex: 10,
           }}
         >
-          {/* Decorative Ambient Rose Glow Behind Hero Centerpiece */}
-          <div
-            style={{
-              position: 'absolute',
-              top: '40px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: 'clamp(320px, 70vw, 880px)',
-              height: '460px',
-              background: 'radial-gradient(ellipse at 50% 50%, rgba(212, 155, 158, 0.25) 0%, rgba(184, 114, 119, 0.12) 45%, rgba(38, 11, 15, 0) 75%)',
-              borderRadius: '9999px',
-              filter: 'blur(110px)',
-              pointerEvents: 'none',
-              zIndex: 0,
-            }}
-          />
+          {/* Glitch-Free Native Background Video with Directional Scrims */}
+          <HeroBackgroundVideo videoSrc="/hero-avatar-namaskaram.mp4" lang={lang} />
 
+          {/* Foreground Hero Content: Fixed on the Left */}
           <div
             style={{
-              maxWidth: '1440px',
-              margin: '0 auto',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              textAlign: 'center',
               position: 'relative',
               zIndex: 10,
+              width: '100%',
+              maxWidth: '1440px',
+              margin: '0 auto',
+              padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 4rem)',
+              display: 'flex',
+              alignItems: 'center',
             }}
           >
-            {/* Status Badge (Matching Reference) */}
-            <div
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '9px',
-                padding: '7px 20px',
-                borderRadius: '9999px',
-                backgroundColor: theme.surface,
-                border: `1px solid ${theme.hairlineBorder}`,
-                color: theme.primary,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: '0.74rem',
-                fontWeight: 700,
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                marginBottom: '1.25rem',
-                boxShadow: '0 4px 18px rgba(0, 0, 0, 0.4)',
-              }}
-            >
-              <span
-                style={{
-                  width: '8px',
-                  height: '8px',
-                  borderRadius: '50%',
-                  backgroundColor: '#E86F76',
-                  boxShadow: '0 0 10px #E86F76',
-                }}
-                className="animate-ping-subtle"
-              />
-              <span>
-                {lang === 'hi'
-                  ? '✦ पोर्टफोलियो 2026 · एआई और मशीन लर्निंग इंजीनियर'
-                  : '✦ PORTFOLIO 2026 · AI & MACHINE LEARNING ENGINEER'}
-              </span>
-            </div>
-
-            {/* Monumental Typography (Matching Reference: Namaskaram.) */}
-            <h1
-              style={{
-                fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', 'Syne', serif",
-                fontSize: 'clamp(4.2rem, 10.5vw, 8.2rem)',
-                lineHeight: 0.98,
-                fontWeight: 800,
-                letterSpacing: lang === 'hi' ? '0.01em' : '-0.025em',
-                textTransform: 'none',
-                color: theme.primary,
-                margin: '0 0 1rem 0',
-                textShadow: '0 12px 42px rgba(212, 155, 158, 0.28)',
-                userSelect: 'none',
-              }}
-            >
-              {lang === 'hi' ? 'नमस्कार.' : 'Namaskaram.'}
-            </h1>
-
-            {/* Subtitle Headline */}
-            <p
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: 'clamp(1.1rem, 2.2vw, 1.4rem)',
-                lineHeight: 1.6,
-                fontWeight: 500,
-                color: theme.secondary,
-                maxWidth: '720px',
-                margin: '0 auto 2.25rem auto',
-                letterSpacing: '-0.01em',
-              }}
-            >
-              {lang === 'hi'
-                ? 'बुद्धिमान प्रेडिक्टिव सिस्टम्स, वास्तविक समय के एल्गोरिदम और डिजिटल अनुभवों का निर्माण।'
-                : 'Crafting intelligent predictive systems, real-time algorithms & spatial digital architectures.'}
-            </p>
-
-            {/* 3D Interactive Spatial Centerpiece Frame */}
+            {/* Left Content Column (Keeps clear of avatar on the right) */}
             <div
               style={{
                 width: '100%',
-                maxWidth: '1040px',
-                margin: '0 auto 2.25rem auto',
-              }}
-            >
-              <HeroVideoPlayer videoSrc="/hero-avatar-namaskaram.mp4" lang={lang} />
-            </div>
-
-            {/* Action Row Under Centerpiece (Matching Reference Layout) */}
-            <div
-              style={{
-                width: '100%',
-                maxWidth: '1040px',
+                maxWidth: '680px',
                 display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: '1.25rem',
-                paddingTop: '0.5rem',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                textAlign: 'left',
               }}
             >
-              {/* Left Action Buttons */}
+              {/* Status Badge */}
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '9px',
+                  padding: '7px 20px',
+                  borderRadius: '9999px',
+                  backgroundColor: 'rgba(57, 19, 27, 0.85)',
+                  border: `1px solid ${theme.hairlineBorder}`,
+                  color: theme.primary,
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontSize: '0.74rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  marginBottom: '1.25rem',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)',
+                  boxShadow: '0 4px 18px rgba(0, 0, 0, 0.45)',
+                }}
+              >
+                <span
+                  style={{
+                    width: '8px',
+                    height: '8px',
+                    borderRadius: '50%',
+                    backgroundColor: '#E86F76',
+                    boxShadow: '0 0 10px #E86F76',
+                  }}
+                  className="animate-ping-subtle"
+                />
+                <span>
+                  {lang === 'hi'
+                    ? '✦ पोर्टफोलियो 2026 · एआई और मशीन लर्निंग इंजीनियर'
+                    : '✦ PORTFOLIO 2026 · AI & MACHINE LEARNING ENGINEER'}
+                </span>
+              </div>
+
+              {/* Monumental Condensed Headline: Namaskaram */}
+              <h1
+                style={{
+                  fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', 'Syne', serif",
+                  fontSize: 'clamp(3.8rem, 8.5vw, 6.8rem)',
+                  lineHeight: 0.98,
+                  fontWeight: 800,
+                  letterSpacing: lang === 'hi' ? '0.01em' : '-0.025em',
+                  color: theme.primary,
+                  margin: '0 0 1rem 0',
+                  textShadow: '0 12px 42px rgba(212, 155, 158, 0.28)',
+                  userSelect: 'none',
+                }}
+              >
+                {lang === 'hi' ? 'नमस्कार.' : 'Namaskaram.'}
+              </h1>
+
+              {/* Secondary Headline: Role & Specialization */}
+              <h2
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: 'clamp(1.4rem, 2.6vw, 2.2rem)',
+                  lineHeight: 1.2,
+                  fontWeight: 800,
+                  letterSpacing: '-0.015em',
+                  textTransform: 'uppercase',
+                  color: theme.secondary,
+                  margin: '0 0 1.25rem 0',
+                }}
+              >
+                {lang === 'hi'
+                  ? 'मैं एक एआई और मशीन लर्निंग इंजीनियर हूँ'
+                  : "I'M AN AI & MACHINE LEARNING ENGINEER"}
+              </h2>
+
+              {/* Subtitle / Narrative Copy */}
+              <p
+                style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontSize: 'clamp(1.02rem, 1.8vw, 1.2rem)',
+                  lineHeight: 1.68,
+                  color: theme.subTextColor,
+                  maxWidth: '560px',
+                  fontWeight: 400,
+                  margin: '0 0 2.25rem 0',
+                }}
+              >
+                {lang === 'hi'
+                  ? 'मेरी डिजिटल दुनिया में आपका स्वागत है। बुद्धिमान प्रेडिक्टिव सिस्टम्स, वास्तविक समय के एल्गोरिदम और डिजिटल अनुभवों का निर्माण।'
+                  : "Welcome to my digital space. Crafting intelligent predictive systems, real-time algorithms & spatial digital architectures."}
+              </p>
+
+              {/* Action Buttons */}
               <div
                 style={{
                   display: 'flex',
                   flexWrap: 'wrap',
                   alignItems: 'center',
-                  gap: '12px',
+                  gap: '14px',
+                  marginBottom: '2.25rem',
                 }}
               >
                 <a
@@ -538,14 +534,14 @@ export default function App() {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '10px',
-                    padding: '14px 30px',
+                    padding: '15px 32px',
                     borderRadius: '12px',
                     backgroundColor: theme.ctaRose,
                     color: '#FFFFFF',
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontSize: '0.88rem',
+                    fontSize: '0.9rem',
                     fontWeight: 700,
-                    letterSpacing: '0.06em',
+                    letterSpacing: '0.04em',
                     textTransform: 'uppercase',
                     textDecoration: 'none',
                     boxShadow: '0 10px 28px rgba(184, 114, 119, 0.45)',
@@ -572,28 +568,29 @@ export default function App() {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '10px',
-                    padding: '14px 28px',
+                    padding: '15px 30px',
                     borderRadius: '12px',
-                    backgroundColor: theme.surfaceHigh,
-                    border: `1px solid ${theme.hairlineBorder}`,
+                    backgroundColor: 'rgba(57, 19, 27, 0.75)',
+                    border: `1.5px solid ${theme.hairlineBorder}`,
                     color: theme.secondary,
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontSize: '0.88rem',
+                    fontSize: '0.9rem',
                     fontWeight: 700,
-                    letterSpacing: '0.06em',
+                    letterSpacing: '0.04em',
                     textTransform: 'uppercase',
                     textDecoration: 'none',
-                    backdropFilter: 'blur(12px)',
+                    backdropFilter: 'blur(16px)',
+                    WebkitBackdropFilter: 'blur(16px)',
                     transition: 'all 0.25s ease',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = theme.primary
-                    e.currentTarget.style.backgroundColor = 'rgba(212, 155, 158, 0.16)'
+                    e.currentTarget.style.backgroundColor = 'rgba(212, 155, 158, 0.18)'
                     e.currentTarget.style.transform = 'translateY(-2px)'
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.borderColor = theme.hairlineBorder
-                    e.currentTarget.style.backgroundColor = theme.surfaceHigh
+                    e.currentTarget.style.backgroundColor = 'rgba(57, 19, 27, 0.75)'
                     e.currentTarget.style.transform = 'translateY(0)'
                   }}
                 >
@@ -602,20 +599,22 @@ export default function App() {
                 </a>
               </div>
 
-              {/* Right Live Status Pill */}
+              {/* Location Pill & Coordinates Overlay */}
               <div
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  padding: '10px 20px',
+                  padding: '10px 22px',
                   borderRadius: '9999px',
-                  backgroundColor: theme.surfaceLow,
+                  backgroundColor: 'rgba(47, 14, 20, 0.82)',
                   border: `1px solid ${theme.hairlineBorder}`,
                   color: theme.subTextColor,
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                   fontSize: '0.84rem',
                   fontWeight: 500,
+                  backdropFilter: 'blur(14px)',
+                  WebkitBackdropFilter: 'blur(14px)',
                   boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
                 }}
               >
