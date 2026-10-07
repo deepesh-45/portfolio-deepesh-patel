@@ -3,7 +3,9 @@
 
 @layer base {
   :root {
-    --font-serif: 'Bodoni Moda', Georgia, serif;
+    --font-display-bold: 'Syne', 'Playfair Display', sans-serif;
+    --font-serif-bold: 'Playfair Display', Georgia, serif;
+    --font-hindi-bold: 'Rozha One', 'Yatra One', serif;
     --font-sans: 'Plus Jakarta Sans', 'Geist Variable', sans-serif;
   }
 }
@@ -22,12 +24,19 @@ html, body, #root {
   font-family: var(--font-sans);
 }
 
-.font-serif-editorial {
-  font-family: 'Bodoni Moda', Georgia, serif;
+.font-display-bold {
+  font-family: var(--font-display-bold);
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
-.font-sans-editorial {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+.font-serif-bold {
+  font-family: var(--font-serif-bold);
+  font-weight: 800;
+}
+
+.font-hindi-bold {
+  font-family: var(--font-hindi-bold);
 }
 
 /* Custom scrollbar styling for warm editorial feel */

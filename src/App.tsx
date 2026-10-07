@@ -3,48 +3,35 @@ import {
   ArrowDown,
   ArrowUpRight,
   Bot,
+  FileText,
   Github,
   Globe,
   Linkedin,
   Mail,
-  MapPin,
-  Moon,
-  Sparkles,
-  Sun,
 } from 'lucide-react'
-import NamaskaramAvatar from './components/NamaskaramAvatar'
+import HeroVideoPlayer from './components/HeroVideoPlayer'
+import MandalaWatermark from './components/MandalaWatermark'
 import Chatbox from './components/Chatbox'
 
-// Editorial luxury color tokens matching DESIGN.md & stitch_3d_avatar_personal_portfolio
-const themes = {
-  light: {
-    bgCanvas: '#fcf9f2',
-    surfaceLow: '#f6f3ec',
-    surface: '#f1eee7',
-    surfaceHigh: '#ebe8e1',
-    surfaceVariant: '#e5e2db',
-    primary: '#332e2d',
-    secondary: '#645d59',
-    textColor: '#1c1c18',
-    subTextColor: '#4e4543',
-    hairlineBorder: 'rgba(78, 69, 67, 0.15)',
-    goldAccent: '#c8aa6e',
-    glowColor: 'rgba(233, 221, 216, 0.6)',
-  },
-  dark: {
-    bgCanvas: '#171514',
-    surfaceLow: '#1f1c1b',
-    surface: '#262322',
-    surfaceHigh: '#2e2a29',
-    surfaceVariant: '#3a3533',
-    primary: '#f5f2eb',
-    secondary: '#b0a7a2',
-    textColor: '#fcf9f2',
-    subTextColor: '#cfc5bf',
-    hairlineBorder: 'rgba(209, 196, 193, 0.16)',
-    goldAccent: '#dfc79b',
-    glowColor: 'rgba(78, 68, 57, 0.4)',
-  },
+// Deep Oxblood Red & Dusky Rose Luxury Editorial Palette
+const theme = {
+  bgCanvas: '#260B0F',
+  bgGradient: 'radial-gradient(ellipse at 75% 20%, #44171F 0%, #290C11 50%, #1A0609 100%)',
+  surfaceLow: '#2F0E14',
+  surface: '#39131B',
+  surfaceHigh: '#481923',
+  surfaceVariant: '#541F2B',
+  primary: '#D49B9E', // Signature Dusky Rose for monumental headlines & badges
+  primaryHover: '#E5ADB0',
+  secondary: '#F5DBD5', // Warm champagne ivory for bold subtitles
+  subTextColor: '#D1B5B8', // Soft dusty mauve for body paragraphs
+  textColor: '#F5DBD5',
+  hairlineBorder: 'rgba(212, 155, 158, 0.22)',
+  cardBg: 'rgba(57, 19, 27, 0.65)',
+  goldAccent: '#DFB088',
+  ctaRose: '#B87277',
+  ctaRoseHover: '#C88085',
+  glowRose: 'rgba(212, 155, 158, 0.25)',
 }
 
 const skillCategories = [
@@ -77,10 +64,10 @@ const projects = [
     category: 'Serverless AI & Emotional Wellness',
     categoryHi: 'सर्वरलेस एआई और मेंटल वेलनेस',
     description:
-      'A serverless mindful journaling web application powered by the Gemini API and Cloud Firestore. Built to provide an empathetic conversational companion for emotional reflection, paired with creative poetry and thought synthesizer tools.',
+      'A serverless mindful journaling web application powered by the Gemini API and Cloud Firestore. Built to provide an empathetic conversational companion for emotional reflection, paired with creative thought synthesis tools.',
     descriptionHi:
       'जेमिनी एपीआई और क्लाउड फायरस्टोर द्वारा संचालित एक सर्वरलेस जर्नलिंग वेब एप्लिकेशन। तनाव मुक्ति और भावनात्मक चिंतन के लिए एक संवेदनशील एआई साथी प्रदान करता है।',
-    image: '/project-reflect-ai.png',
+    image: '/project-reflect-ai.jpg',
     link: 'https://deepesh-45.github.io/Reflect-AI/',
     tags: ['Gemini API', 'Cloud Firestore', 'Serverless AI', 'JavaScript'],
   },
@@ -93,7 +80,7 @@ const projects = [
       'An end-to-end laptop recommendation system featuring a Python data processing pipeline and an intuitive Streamlit interface. Evaluates multiple hardware vectors and budget parameters to deliver ranked recommendations.',
     descriptionHi:
       'पाइथन और स्ट्रीमलिट द्वारा निर्मित एक लैपटॉप अनुशंसा एप्लिकेशन। उपयोगकर्ता की आवश्यकताओं और बजट के अनुसार शीर्ष लैपटॉप को रैंक करने के लिए एमएल एल्गोरिदम का उपयोग करता है।',
-    image: '/project-laptop-recommender.png',
+    image: '/project-laptop-recommender.jpg',
     link: 'https://deepesh-45-my-laptop.hf.space/',
     tags: ['Python', 'Streamlit', 'Scikit-Learn', 'Hugging Face'],
   },
@@ -103,10 +90,10 @@ const projects = [
     category: 'Content-Based Vector Recommendation',
     categoryHi: 'कंटेंट-बेस्ड वेक्टर अनुशंसा प्रणाली',
     description:
-      'A recommendation pipeline leveraging Cosine Similarity and vector space modeling across extensive Kaggle datasets. Implements statistical data cleaning, tokenization, and multi-dimensional preference matching.',
+      'A recommendation pipeline leveraging Cosine Similarity and vector space modeling across extensive literary datasets. Implements statistical data cleaning, tokenization, and multi-dimensional preference matching.',
     descriptionHi:
       'कागल डेटासेट पर कोसाइन सिमिलैरिटी और वेक्टर स्पेस मॉडलिंग का उपयोग करके बनाई गई पुस्तक अनुशंसा प्रणाली। डेटा की सफाई और वेक्टर मिलान द्वारा सटीक सुझाव प्रस्तुत करती है।',
-    image: '/project-books-recommender.png',
+    image: '/project-books-recommender.jpg',
     link: 'https://github.com/deepesh-45',
     tags: ['Python', 'Pandas', 'NumPy', 'Cosine Similarity'],
   },
@@ -119,7 +106,7 @@ const projects = [
       'An interactive educational visualizer that renders classic sorting algorithms (Merge, Quick, Bubble, Insertion) in real time with dynamic speed controls and customizable array distributions.',
     descriptionHi:
       'शास्त्रीय सॉर्टिंग एल्गोरिदम (मर्ज, क्विक, बबल, इंसर्शन) को रीयल-टाइम में समझाने वाला एक इंटरएक्टिव वेब विजुअलाइज़र। गति नियंत्रण और कस्टम डेटा आकारों के साथ समृद्ध।',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+    image: '/project-sortify-visualizer.jpg',
     link: 'https://sortify-silk.vercel.app/',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'Algorithms'],
   },
@@ -165,13 +152,6 @@ const certifications = [
 ]
 
 export default function App() {
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('editorial-theme') as 'light' | 'dark' | null
-      if (savedTheme) return savedTheme
-    }
-    return 'light'
-  })
   const [lang, setLang] = useState<'en' | 'hi'>(() => {
     if (typeof window !== 'undefined') {
       const savedLang = localStorage.getItem('editorial-lang') as 'en' | 'hi' | null
@@ -182,15 +162,6 @@ export default function App() {
   const [isChatOpen, setIsChatOpen] = useState(false)
 
   useEffect(() => {
-    localStorage.setItem('editorial-theme', theme)
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [theme])
-
-  useEffect(() => {
     localStorage.setItem('editorial-lang', lang)
     document.title =
       lang === 'hi'
@@ -198,24 +169,26 @@ export default function App() {
         : 'Deepesh Patel — AI & Machine Learning Engineer'
   }, [lang])
 
-  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light')
   const toggleLang = () => setLang(lang === 'en' ? 'hi' : 'en')
-
-  const currentTheme = themes[theme]
 
   return (
     <div
       style={{
-        backgroundColor: currentTheme.bgCanvas,
-        color: currentTheme.textColor,
+        backgroundColor: theme.bgCanvas,
+        backgroundImage: theme.bgGradient,
+        color: theme.textColor,
         minHeight: '100vh',
         width: '100%',
-        transition: 'background-color 0.4s ease, color 0.4s ease',
+        overflowX: 'hidden',
+        position: 'relative',
         fontFamily: "'Plus Jakarta Sans', sans-serif",
       }}
     >
+      {/* Corner Traditional Mandala Watermarks */}
+      <MandalaWatermark />
+
       {/* =========================================================================
-          EDITORIAL HEADER & NAVIGATION
+          TOP NAVIGATION BAR (Matching Reference Image Header)
           ========================================================================= */}
       <header
         style={{
@@ -224,10 +197,10 @@ export default function App() {
           left: 0,
           right: 0,
           zIndex: 50,
-          backgroundColor: `${currentTheme.bgCanvas}E6`,
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          borderBottom: `1px solid ${currentTheme.hairlineBorder}`,
+          backgroundColor: 'rgba(38, 11, 15, 0.78)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          borderBottom: `1px solid ${theme.hairlineBorder}`,
         }}
       >
         <div
@@ -239,129 +212,128 @@ export default function App() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '2rem',
+            gap: '1.5rem',
           }}
         >
-          {/* Brand Monogram & Name */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+          {/* Logo & Brand matching Reference: [Icon] Portfolio | ... */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <a
               href="#home"
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '12px',
+                gap: '10px',
                 textDecoration: 'none',
-                color: currentTheme.primary,
+                color: theme.secondary,
               }}
             >
+              {/* Monogram logo symbol */}
               <div
                 style={{
-                  width: '38px',
-                  height: '38px',
-                  borderRadius: '50%',
-                  backgroundColor: currentTheme.primary,
-                  color: currentTheme.bgCanvas,
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '10px',
+                  backgroundColor: theme.primary,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontFamily: "'Bodoni Moda', serif",
-                  fontSize: '1rem',
-                  fontWeight: 700,
-                  boxShadow: `0 0 12px ${currentTheme.goldAccent}40`,
+                  boxShadow: `0 0 12px ${theme.glowRose}`,
                 }}
               >
-                DP
+                <span
+                  style={{
+                    fontFamily: "'Oswald', sans-serif",
+                    fontWeight: 700,
+                    fontSize: '1rem',
+                    color: '#260B0F',
+                  }}
+                >
+                  DP
+                </span>
               </div>
               <span
                 style={{
-                  fontFamily: "'Bodoni Moda', serif",
-                  fontSize: '1.28rem',
-                  fontWeight: 600,
-                  letterSpacing: '-0.02em',
-                  textTransform: 'uppercase',
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: '1.25rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.02em',
+                  color: theme.secondary,
                 }}
               >
-                Deepesh Patel
+                Portfolio
               </span>
             </a>
 
-            <div
+            {/* Vertical Divider Line */}
+            <span
               style={{
-                display: 'none',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '4px 12px',
-                borderRadius: '9999px',
-                backgroundColor: currentTheme.surfaceVariant,
-                color: currentTheme.secondary,
-                fontSize: '0.6875rem',
-                fontWeight: 600,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
+                display: 'inline-block',
+                width: '1px',
+                height: '18px',
+                backgroundColor: 'rgba(212, 155, 158, 0.35)',
               }}
-              className="md:flex"
+              className="hidden sm:inline-block"
+            />
+
+            {/* Sub-Brand Name */}
+            <span
+              style={{
+                fontSize: '0.85rem',
+                color: theme.subTextColor,
+                fontWeight: 500,
+              }}
+              className="hidden md:inline-block"
             >
-              <span
-                style={{
-                  width: '6px',
-                  height: '6px',
-                  borderRadius: '50%',
-                  backgroundColor: currentTheme.goldAccent,
-                }}
-                className="animate-ping-subtle"
-              />
-              <span>{lang === 'hi' ? 'बी.टेक एआई & एमएल · एकोपोलिस' : 'B.Tech AI & ML · Acropolis'}</span>
-            </div>
+              Deepesh Patel
+            </span>
           </div>
 
-          {/* Navigation Links */}
+          {/* Navigation Links: About · Projects · Contact */}
           <nav
             style={{
               display: 'none',
               alignItems: 'center',
-              gap: '2rem',
+              gap: '2.5rem',
             }}
-            className="lg:flex"
+            className="md:flex"
           >
             {[
-              { id: 'featured-works', labelEn: 'Selected Works', labelHi: 'परियोजनाएं' },
-              { id: 'metrics', labelEn: 'Practicum & Metrics', labelHi: 'मेट्रिक्स' },
-              { id: 'competencies', labelEn: 'Competencies', labelHi: 'कौशल' },
-              { id: 'certifications', labelEn: 'Certifications', labelHi: 'प्रमाणपत्र' },
               { id: 'about', labelEn: 'About', labelHi: 'परिचय' },
+              { id: 'projects', labelEn: 'Projects', labelHi: 'परियोजनाएं' },
+              { id: 'metrics', labelEn: 'Metrics', labelHi: 'मेट्रिक्स' },
+              { id: 'contact', labelEn: 'Contact', labelHi: 'संपर्क' },
             ].map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
                 style={{
                   textDecoration: 'none',
-                  fontSize: '0.75rem',
+                  fontSize: '0.88rem',
                   fontWeight: 600,
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  color: currentTheme.secondary,
+                  letterSpacing: '0.03em',
+                  color: theme.secondary,
                   transition: 'color 0.2s ease',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = currentTheme.primary)}
-                onMouseLeave={(e) => (e.currentTarget.style.color = currentTheme.secondary)}
+                onMouseEnter={(e) => (e.currentTarget.style.color = theme.primary)}
+                onMouseLeave={(e) => (e.currentTarget.style.color = theme.secondary)}
               >
                 {lang === 'hi' ? item.labelHi : item.labelEn}
               </a>
             ))}
           </nav>
 
-          {/* Controls: Language, Theme & Let's Connect */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            {/* Language Switcher */}
+          {/* Right Action Controls */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            {/* Language Toggle */}
             <button
               onClick={toggleLang}
               aria-label="Toggle Language"
               style={{
-                padding: '6px 12px',
+                padding: '7px 14px',
                 borderRadius: '9999px',
-                backgroundColor: currentTheme.surface,
-                border: `1px solid ${currentTheme.hairlineBorder}`,
-                color: currentTheme.primary,
+                backgroundColor: 'rgba(57, 19, 27, 0.75)',
+                border: `1px solid ${theme.hairlineBorder}`,
+                color: theme.primary,
                 fontSize: '0.75rem',
                 fontWeight: 700,
                 letterSpacing: '0.05em',
@@ -369,52 +341,40 @@ export default function App() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '6px',
+                backdropFilter: 'blur(10px)',
               }}
             >
               <Globe size={13} />
               <span>{lang === 'en' ? 'हिंदी' : 'EN'}</span>
             </button>
 
-            {/* Theme Switcher */}
-            <button
-              onClick={toggleTheme}
-              aria-label="Toggle Theme"
-              style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                backgroundColor: currentTheme.surface,
-                border: `1px solid ${currentTheme.hairlineBorder}`,
-                color: currentTheme.primary,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-              }}
-            >
-              {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
-            </button>
-
-            {/* Let's Connect CTA */}
+            {/* Let's Connect CTA in header */}
             <a
               href="mailto:pateldeepesh1408@gmail.com"
               style={{
                 display: 'none',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '9px 18px',
-                borderRadius: '8px',
-                backgroundColor: currentTheme.primary,
-                color: currentTheme.bgCanvas,
-                fontSize: '0.75rem',
+                padding: '9px 20px',
+                borderRadius: '9999px',
+                backgroundColor: 'transparent',
+                border: `1px solid ${theme.hairlineBorder}`,
+                color: theme.secondary,
+                fontSize: '0.78rem',
                 fontWeight: 600,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
+                letterSpacing: '0.04em',
                 textDecoration: 'none',
-                boxShadow: '0 4px 14px rgba(0,0,0,0.1)',
                 transition: 'all 0.2s ease',
               }}
               className="sm:inline-flex"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = theme.ctaRose
+                e.currentTarget.style.color = '#FFFFFF'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'
+                e.currentTarget.style.color = theme.secondary
+              }}
             >
               {lang === 'hi' ? 'संपर्क करें' : "Let's Connect"}
             </a>
@@ -422,32 +382,33 @@ export default function App() {
         </div>
       </header>
 
-      {/* Main Page Content */}
+      {/* Main Content Area */}
       <main style={{ paddingTop: '80px', width: '100%' }}>
         {/* =========================================================================
-            SECTION 1: HERO & 3D INTERACTIVE CENTERPIECE
-            ========================================================================= */}
+            SECTION 1: HERO (EXACT REPLICA OF USER REFERENCE DESIGN)
+            ========================================================================= */
         <section
           id="home"
           style={{
             position: 'relative',
             width: '100%',
             overflow: 'hidden',
-            padding: 'clamp(2rem, 5vw, 4rem) clamp(1.25rem, 4vw, 4rem) clamp(3rem, 6vw, 5rem)',
+            padding: 'clamp(2.5rem, 5vw, 4.5rem) clamp(1.25rem, 4vw, 4rem) clamp(3.5rem, 6vw, 5.5rem)',
+            zIndex: 10,
           }}
         >
-          {/* Ambient Glow */}
+          {/* Decorative Ambient Rose Glow Behind Hero Centerpiece */}
           <div
             style={{
               position: 'absolute',
               top: '40px',
               left: '50%',
               transform: 'translateX(-50%)',
-              width: 'min(780px, 90vw)',
-              height: '480px',
-              backgroundColor: currentTheme.glowColor,
-              borderRadius: '50%',
-              filter: 'blur(120px)',
+              width: 'clamp(320px, 70vw, 880px)',
+              height: '460px',
+              background: 'radial-gradient(ellipse at 50% 50%, rgba(212, 155, 158, 0.25) 0%, rgba(184, 114, 119, 0.12) 45%, rgba(38, 11, 15, 0) 75%)',
+              borderRadius: '9999px',
+              filter: 'blur(110px)',
               pointerEvents: 'none',
               zIndex: 0,
             }}
@@ -455,33 +416,34 @@ export default function App() {
 
           <div
             style={{
-              position: 'relative',
-              zIndex: 10,
               maxWidth: '1440px',
               margin: '0 auto',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               textAlign: 'center',
+              position: 'relative',
+              zIndex: 10,
             }}
           >
-            {/* Status Badge */}
+            {/* Status Badge (Matching Reference) */}
             <div
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '10px',
-                padding: '8px 18px',
+                gap: '9px',
+                padding: '7px 20px',
                 borderRadius: '9999px',
-                backgroundColor: currentTheme.surfaceHigh,
-                color: currentTheme.subTextColor,
-                fontSize: '0.75rem',
-                fontWeight: 600,
-                letterSpacing: '0.08em',
+                backgroundColor: theme.surface,
+                border: `1px solid ${theme.hairlineBorder}`,
+                color: theme.primary,
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: '0.74rem',
+                fontWeight: 700,
+                letterSpacing: '0.12em',
                 textTransform: 'uppercase',
                 marginBottom: '1.25rem',
-                border: `1px solid ${currentTheme.hairlineBorder}`,
-                boxShadow: '0 2px 10px rgba(0,0,0,0.04)',
+                boxShadow: '0 4px 18px rgba(0, 0, 0, 0.4)',
               }}
             >
               <span
@@ -489,191 +451,121 @@ export default function App() {
                   width: '8px',
                   height: '8px',
                   borderRadius: '50%',
-                  backgroundColor: currentTheme.goldAccent,
+                  backgroundColor: '#E86F76',
+                  boxShadow: '0 0 10px #E86F76',
                 }}
                 className="animate-ping-subtle"
               />
               <span>
                 {lang === 'hi'
-                  ? '✦ पोर्टफोलियो 2026 · एआई & मशीन लर्निंग इंजीनियर'
+                  ? '✦ पोर्टफोलियो 2026 · एआई और मशीन लर्निंग इंजीनियर'
                   : '✦ PORTFOLIO 2026 · AI & MACHINE LEARNING ENGINEER'}
               </span>
             </div>
 
-            {/* Monumental Typography */}
+            {/* Monumental Typography (Matching Reference: Namaskaram.) */}
             <h1
               style={{
-                fontFamily: "'Bodoni Moda', serif",
-                fontSize: 'clamp(3.5rem, 8vw, 6.2rem)',
-                lineHeight: 1.05,
-                fontWeight: 400,
-                letterSpacing: '-0.03em',
+                fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', 'Syne', serif",
+                fontSize: 'clamp(4.2rem, 10.5vw, 8.2rem)',
+                lineHeight: 0.98,
+                fontWeight: 800,
+                letterSpacing: lang === 'hi' ? '0.01em' : '-0.025em',
                 textTransform: 'none',
-                color: currentTheme.primary,
+                color: theme.primary,
                 margin: '0 0 1rem 0',
+                textShadow: '0 12px 42px rgba(212, 155, 158, 0.28)',
+                userSelect: 'none',
               }}
             >
-              {lang === 'hi' ? 'नमस्कारम।' : 'Namaskaram.'}
+              {lang === 'hi' ? 'नमस्कार.' : 'Namaskaram.'}
             </h1>
 
+            {/* Subtitle Headline */}
             <p
               style={{
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
-                lineHeight: 1.5,
-                color: currentTheme.subTextColor,
+                fontSize: 'clamp(1.1rem, 2.2vw, 1.4rem)',
+                lineHeight: 1.6,
+                fontWeight: 500,
+                color: theme.secondary,
                 maxWidth: '720px',
-                fontWeight: 400,
+                margin: '0 auto 2.25rem auto',
                 letterSpacing: '-0.01em',
-                margin: '0 0 2.5rem 0',
               }}
             >
               {lang === 'hi'
-                ? 'इंटेलिजेंट एल्गोरिदम, मशीन लर्निंग आर्किटेक्चर और स्केलेबल प्रेडिक्टिव सिस्टम्स का निर्माण।'
-                : 'Engineering intelligent algorithms, machine learning architectures, and scalable interactive systems.'}
+                ? 'बुद्धिमान प्रेडिक्टिव सिस्टम्स, वास्तविक समय के एल्गोरिदम और डिजिटल अनुभवों का निर्माण।'
+                : 'Crafting intelligent predictive systems, real-time algorithms & spatial digital architectures.'}
             </p>
 
-            {/* 3D INTERACTIVE SPATIAL CENTERPIECE */}
+            {/* 3D Interactive Spatial Centerpiece Frame */}
             <div
               style={{
-                position: 'relative',
                 width: '100%',
-                maxWidth: '1060px',
-                borderRadius: '32px',
-                backgroundColor: currentTheme.surface,
-                padding: 'clamp(8px, 1.5vw, 14px)',
-                boxShadow: '0 20px 45px -15px rgba(36, 33, 32, 0.12)',
-                border: `1px solid ${currentTheme.hairlineBorder}`,
-                marginBottom: '2.5rem',
+                maxWidth: '1040px',
+                margin: '0 auto 2.25rem auto',
               }}
             >
-              <div
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  height: 'clamp(440px, 55vw, 600px)',
-                  borderRadius: '24px',
-                  overflow: 'hidden',
-                  backgroundColor: currentTheme.surfaceLow,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                {/* Three.js 3D Namaskaram Avatar Canvas */}
-                <NamaskaramAvatar theme={theme} />
-
-                {/* Top Right Interaction Badge */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '16px',
-                    right: '16px',
-                    zIndex: 20,
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    backgroundColor: `${currentTheme.bgCanvas}E6`,
-                    backdropFilter: 'blur(12px)',
-                    padding: '8px 16px',
-                    borderRadius: '9999px',
-                    border: `1px solid ${currentTheme.hairlineBorder}`,
-                    color: currentTheme.primary,
-                    fontSize: '0.6875rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  <Sparkles size={14} style={{ color: currentTheme.goldAccent }} />
-                  <span>{lang === 'hi' ? 'इंटरएक्टिव 3D · पॉइंटर-रिस्पॉन्सिव अवतार' : 'Interactive 3D · Drag to Orbit Posture'}</span>
-                </div>
-
-                {/* Bottom Left Spatial Coordinates Overlay */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '16px',
-                    left: '16px',
-                    zIndex: 20,
-                    display: 'none',
-                    flexDirection: 'column',
-                    alignItems: 'flex-start',
-                    gap: '2px',
-                    backgroundColor: `${currentTheme.bgCanvas}E6`,
-                    backdropFilter: 'blur(12px)',
-                    padding: '10px 18px',
-                    borderRadius: '16px',
-                    border: `1px solid ${currentTheme.hairlineBorder}`,
-                    color: currentTheme.subTextColor,
-                    textAlign: 'left',
-                  }}
-                  className="sm:flex"
-                >
-                  <span
-                    style={{
-                      fontSize: '0.6875rem',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.1em',
-                      color: currentTheme.secondary,
-                      fontWeight: 600,
-                    }}
-                  >
-                    Spatial Coordinate Frame
-                  </span>
-                  <span
-                    style={{
-                      fontSize: '0.85rem',
-                      fontWeight: 500,
-                      color: currentTheme.primary,
-                    }}
-                  >
-                    Acropolis Institute · Indore, India · 22.7196° N, 75.8577° E
-                  </span>
-                </div>
-              </div>
+              <HeroVideoPlayer videoSrc="/hero-avatar-namaskaram.mp4" lang={lang} />
             </div>
 
-            {/* Action Row */}
+            {/* Action Row Under Centerpiece (Matching Reference Layout) */}
             <div
               style={{
                 width: '100%',
-                maxWidth: '960px',
+                maxWidth: '1040px',
                 display: 'flex',
                 flexWrap: 'wrap',
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 gap: '1.25rem',
+                paddingTop: '0.5rem',
               }}
             >
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center' }}>
+              {/* Left Action Buttons */}
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  gap: '12px',
+                }}
+              >
                 <a
-                  href="#featured-works"
+                  href="#projects"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '10px',
-                    padding: '14px 28px',
-                    borderRadius: '8px',
-                    backgroundColor: currentTheme.primary,
-                    color: currentTheme.bgCanvas,
+                    padding: '14px 30px',
+                    borderRadius: '12px',
+                    backgroundColor: theme.ctaRose,
+                    color: '#FFFFFF',
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontSize: '0.75rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.08em',
+                    fontSize: '0.88rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.06em',
                     textTransform: 'uppercase',
                     textDecoration: 'none',
-                    boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-                    transition: 'all 0.2s ease',
+                    boxShadow: '0 10px 28px rgba(184, 114, 119, 0.45)',
+                    transition: 'all 0.25s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = theme.ctaRoseHover
+                    e.currentTarget.style.transform = 'translateY(-2px)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = theme.ctaRose
+                    e.currentTarget.style.transform = 'translateY(0)'
                   }}
                 >
-                  <span>{lang === 'hi' ? 'परियोजनाएं देखें' : 'Explore Selected Works'}</span>
-                  <ArrowDown size={16} />
+                  <span>{lang === 'hi' ? 'चुनिंदा प्रोजेक्ट्स देखें' : 'Explore Selected Works'}</span>
+                  <ArrowDown size={17} />
                 </a>
 
                 <a
                   href="/deepesh-patel-resume.pdf"
-                  download="deepesh-patel-resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -681,61 +573,74 @@ export default function App() {
                     alignItems: 'center',
                     gap: '10px',
                     padding: '14px 28px',
-                    borderRadius: '8px',
-                    backgroundColor: currentTheme.surfaceHigh,
-                    color: currentTheme.primary,
+                    borderRadius: '12px',
+                    backgroundColor: theme.surfaceHigh,
+                    border: `1px solid ${theme.hairlineBorder}`,
+                    color: theme.secondary,
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontSize: '0.75rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.08em',
+                    fontSize: '0.88rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.06em',
                     textTransform: 'uppercase',
                     textDecoration: 'none',
-                    border: `1px solid ${currentTheme.hairlineBorder}`,
-                    transition: 'all 0.2s ease',
+                    backdropFilter: 'blur(12px)',
+                    transition: 'all 0.25s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = theme.primary
+                    e.currentTarget.style.backgroundColor = 'rgba(212, 155, 158, 0.16)'
+                    e.currentTarget.style.transform = 'translateY(-2px)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = theme.hairlineBorder
+                    e.currentTarget.style.backgroundColor = theme.surfaceHigh
+                    e.currentTarget.style.transform = 'translateY(0)'
                   }}
                 >
-                  <span>{lang === 'hi' ? 'रेज़्यूमे / सीवी डाउनलोड करें' : 'Download Monograph / CV'}</span>
-                  <ArrowUpRight size={16} />
+                  <FileText size={17} />
+                  <span>{lang === 'hi' ? 'बायोडाटा / सीवी डाउनलोड करें' : 'Download Monograph / CV'}</span>
                 </a>
               </div>
 
-              {/* Status Pill */}
+              {/* Right Live Status Pill */}
               <div
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  padding: '10px 18px',
+                  padding: '10px 20px',
                   borderRadius: '9999px',
-                  backgroundColor: currentTheme.surfaceLow,
-                  border: `1px solid ${currentTheme.hairlineBorder}`,
-                  fontSize: '0.75rem',
-                  color: currentTheme.subTextColor,
+                  backgroundColor: theme.surfaceLow,
+                  border: `1px solid ${theme.hairlineBorder}`,
+                  color: theme.subTextColor,
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontSize: '0.84rem',
                   fontWeight: 500,
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
                 }}
               >
-                <MapPin size={14} style={{ color: currentTheme.goldAccent }} />
+                <span style={{ color: theme.primary, fontSize: '0.95rem' }}>📍</span>
                 <span>
                   {lang === 'hi'
-                    ? 'इंदौर, भारत · ओपन फॉर सॉफ्टवेयर & एआई रोल्स'
-                    : 'Indore, India · Available for Select Commissions & Roles'}
+                    ? 'इंदौर और बेंगलुरु · अवसरों व सहयोग के लिए उपलब्ध'
+                    : 'Indore & Bengaluru · Open for ML & Software Roles'}
                 </span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* =========================================================================
-            SECTION 2: CURATED METRICS & ARCHITECTURAL PRACTICUM
+        /* =========================================================================
+            SECTION 2: CURATED METRICS & PRACTICUM
             ========================================================================= */}
         <section
           id="metrics"
           style={{
             width: '100%',
-            backgroundColor: currentTheme.surfaceLow,
-            padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 4rem)',
-            borderTop: `1px solid ${currentTheme.hairlineBorder}`,
-            borderBottom: `1px solid ${currentTheme.hairlineBorder}`,
+            backgroundColor: theme.surfaceLow,
+            padding: 'clamp(3.5rem, 6vw, 5.5rem) clamp(1.25rem, 4vw, 4rem)',
+            borderTop: `1px solid ${theme.hairlineBorder}`,
+            borderBottom: `1px solid ${theme.hairlineBorder}`,
           }}
         >
           <div
@@ -747,20 +652,14 @@ export default function App() {
               gap: '2.5rem',
             }}
           >
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '0.5rem',
-              }}
-            >
+            <div>
               <span
                 style={{
-                  fontSize: '0.6875rem',
+                  fontSize: '0.72rem',
                   fontWeight: 600,
-                  letterSpacing: '0.1em',
+                  letterSpacing: '0.12em',
                   textTransform: 'uppercase',
-                  color: currentTheme.secondary,
+                  color: theme.primary,
                 }}
               >
                 {lang === 'hi' ? 'अनुशासन और प्रदर्शन' : 'Disciplinary Footprint'}
@@ -772,15 +671,16 @@ export default function App() {
                   alignItems: 'baseline',
                   justifyContent: 'space-between',
                   gap: '1rem',
+                  marginTop: '0.35rem',
                 }}
               >
                 <h2
                   style={{
-                    fontFamily: "'Bodoni Moda', serif",
-                    fontSize: 'clamp(2rem, 4vw, 2.75rem)',
-                    fontWeight: 500,
+                    fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', serif",
+                    fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)',
+                    fontWeight: 800,
                     letterSpacing: '-0.02em',
-                    color: currentTheme.primary,
+                    color: theme.secondary,
                     margin: 0,
                   }}
                 >
@@ -790,8 +690,8 @@ export default function App() {
                   style={{
                     maxWidth: '460px',
                     margin: 0,
-                    fontSize: '0.95rem',
-                    color: currentTheme.subTextColor,
+                    fontSize: '0.98rem',
+                    color: theme.subTextColor,
                     lineHeight: 1.6,
                   }}
                 >
@@ -813,24 +713,24 @@ export default function App() {
               {/* Metric 1 */}
               <div
                 style={{
-                  backgroundColor: currentTheme.surface,
+                  backgroundColor: theme.surface,
                   borderRadius: '24px',
-                  padding: '2rem',
-                  border: `1px solid ${currentTheme.hairlineBorder}`,
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.03)',
+                  padding: '2.25rem',
+                  border: `1px solid ${theme.hairlineBorder}`,
+                  boxShadow: '0 12px 30px rgba(10, 2, 4, 0.4)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  minHeight: '220px',
+                  minHeight: '230px',
                 }}
               >
                 <span
                   style={{
-                    fontSize: '0.6875rem',
+                    fontSize: '0.72rem',
                     fontWeight: 600,
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
-                    color: currentTheme.secondary,
+                    color: theme.primary,
                   }}
                 >
                   {lang === 'hi' ? 'आईआईटी मद्रास डिस्टिंक्शन' : 'Academic Distinction'}
@@ -838,17 +738,17 @@ export default function App() {
                 <div style={{ margin: '1rem 0' }}>
                   <span
                     style={{
-                      fontFamily: "'Bodoni Moda', serif",
-                      fontSize: 'clamp(3rem, 5vw, 4.2rem)',
-                      fontWeight: 400,
-                      letterSpacing: '-0.03em',
-                      color: currentTheme.primary,
+                      fontFamily: "'Oswald', 'Syne', sans-serif",
+                      fontSize: 'clamp(3.4rem, 6vw, 4.8rem)',
+                      fontWeight: 700,
+                      letterSpacing: '-0.02em',
+                      color: theme.primary,
                     }}
                   >
                     Top 2%
                   </span>
                 </div>
-                <p style={{ margin: 0, fontSize: '0.9rem', color: currentTheme.subTextColor, lineHeight: 1.55 }}>
+                <p style={{ margin: 0, fontSize: '0.92rem', color: theme.subTextColor, lineHeight: 1.55 }}>
                   {lang === 'hi'
                     ? "NPTEL IIT मद्रास 'Python for Data Science' कोर्स टॉपर 83% एलिट स्कोर के साथ।"
                     : 'NPTEL IIT Madras Course Topper in Python for Data Science with an 83% certified score.'}
@@ -858,24 +758,24 @@ export default function App() {
               {/* Metric 2 */}
               <div
                 style={{
-                  backgroundColor: currentTheme.surface,
+                  backgroundColor: theme.surface,
                   borderRadius: '24px',
-                  padding: '2rem',
-                  border: `1px solid ${currentTheme.hairlineBorder}`,
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.03)',
+                  padding: '2.25rem',
+                  border: `1px solid ${theme.hairlineBorder}`,
+                  boxShadow: '0 12px 30px rgba(10, 2, 4, 0.4)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  minHeight: '220px',
+                  minHeight: '230px',
                 }}
               >
                 <span
                   style={{
-                    fontSize: '0.6875rem',
+                    fontSize: '0.72rem',
                     fontWeight: 600,
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
-                    color: currentTheme.secondary,
+                    color: theme.primary,
                   }}
                 >
                   {lang === 'hi' ? 'परिनियोजित सिस्टम्स' : 'Intelligent Deployments'}
@@ -883,17 +783,17 @@ export default function App() {
                 <div style={{ margin: '1rem 0' }}>
                   <span
                     style={{
-                      fontFamily: "'Bodoni Moda', serif",
-                      fontSize: 'clamp(3rem, 5vw, 4.2rem)',
-                      fontWeight: 400,
-                      letterSpacing: '-0.03em',
-                      color: currentTheme.primary,
+                      fontFamily: "'Oswald', 'Syne', sans-serif",
+                      fontSize: 'clamp(3.4rem, 6vw, 4.8rem)',
+                      fontWeight: 700,
+                      letterSpacing: '-0.02em',
+                      color: theme.primary,
                     }}
                   >
                     4+
                   </span>
                 </div>
-                <p style={{ margin: 0, fontSize: '0.9rem', color: currentTheme.subTextColor, lineHeight: 1.55 }}>
+                <p style={{ margin: 0, fontSize: '0.92rem', color: theme.subTextColor, lineHeight: 1.55 }}>
                   {lang === 'hi'
                     ? 'हगिंग फेस, वेरसेल और गिटहब पर लाइव परिनियोजित अनुशंसा इंजन व जेनरेटिव एआई ऐप्स।'
                     : 'Deployed machine learning systems, recommender engines, and real-time interactive visualizers.'}
@@ -903,24 +803,24 @@ export default function App() {
               {/* Metric 3 */}
               <div
                 style={{
-                  backgroundColor: currentTheme.surface,
+                  backgroundColor: theme.surface,
                   borderRadius: '24px',
-                  padding: '2rem',
-                  border: `1px solid ${currentTheme.hairlineBorder}`,
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.03)',
+                  padding: '2.25rem',
+                  border: `1px solid ${theme.hairlineBorder}`,
+                  boxShadow: '0 12px 30px rgba(10, 2, 4, 0.4)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  minHeight: '220px',
+                  minHeight: '230px',
                 }}
               >
                 <span
                   style={{
-                    fontSize: '0.6875rem',
+                    fontSize: '0.72rem',
                     fontWeight: 600,
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
-                    color: currentTheme.secondary,
+                    color: theme.primary,
                   }}
                 >
                   {lang === 'hi' ? 'अकादमिक निरंतरता' : 'Academic Standing'}
@@ -928,17 +828,17 @@ export default function App() {
                 <div style={{ margin: '1rem 0' }}>
                   <span
                     style={{
-                      fontFamily: "'Bodoni Moda', serif",
-                      fontSize: 'clamp(3rem, 5vw, 4.2rem)',
-                      fontWeight: 400,
-                      letterSpacing: '-0.03em',
-                      color: currentTheme.primary,
+                      fontFamily: "'Oswald', 'Syne', sans-serif",
+                      fontSize: 'clamp(3.4rem, 6vw, 4.8rem)',
+                      fontWeight: 700,
+                      letterSpacing: '-0.02em',
+                      color: theme.primary,
                     }}
                   >
                     7.96
                   </span>
                 </div>
-                <p style={{ margin: 0, fontSize: '0.9rem', color: currentTheme.subTextColor, lineHeight: 1.55 }}>
+                <p style={{ margin: 0, fontSize: '0.92rem', color: theme.subTextColor, lineHeight: 1.55 }}>
                   {lang === 'hi'
                     ? 'एकोपोलिस इंस्टीट्यूट ऑफ टेक्नोलॉजी एंड रिसर्च में बी.टेक एआई & एमएल में स्थिर सीजीपीए।'
                     : 'Consistent CGPA in B.Tech Computer Science & AI/ML at Acropolis Institute of Technology & Research.'}
@@ -949,13 +849,13 @@ export default function App() {
         </section>
 
         {/* =========================================================================
-            SECTION 3: FEATURED WORKS / SELECTED SPATIAL & AI CANVASES
+            SECTION 3: SELECTED WORKS / PROJECTS (WITH GENERATED EDITORIAL ARTWORKS)
             ========================================================================= */}
         <section
-          id="featured-works"
+          id="projects"
           style={{
             width: '100%',
-            padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 4rem)',
+            padding: 'clamp(3.5rem, 6vw, 6rem) clamp(1.25rem, 4vw, 4rem)',
           }}
         >
           <div
@@ -964,7 +864,7 @@ export default function App() {
               margin: '0 auto',
               display: 'flex',
               flexDirection: 'column',
-              gap: '2.5rem',
+              gap: '3rem',
             }}
           >
             <div
@@ -979,23 +879,23 @@ export default function App() {
               <div>
                 <span
                   style={{
-                    fontSize: '0.6875rem',
+                    fontSize: '0.72rem',
                     fontWeight: 600,
-                    letterSpacing: '0.1em',
+                    letterSpacing: '0.12em',
                     textTransform: 'uppercase',
-                    color: currentTheme.secondary,
+                    color: theme.primary,
                   }}
                 >
                   Archive 2026
                 </span>
                 <h2
                   style={{
-                    fontFamily: "'Bodoni Moda', serif",
-                    fontSize: 'clamp(2rem, 4vw, 2.75rem)',
-                    fontWeight: 500,
+                    fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', serif",
+                    fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)',
+                    fontWeight: 800,
                     letterSpacing: '-0.02em',
-                    color: currentTheme.primary,
-                    margin: '0.25rem 0 0 0',
+                    color: theme.secondary,
+                    margin: '0.35rem 0 0 0',
                   }}
                 >
                   {lang === 'hi' ? 'विशेष परियोजनाएं और सिस्टम' : 'Selected Spatial & AI Canvases'}
@@ -1003,11 +903,11 @@ export default function App() {
               </div>
               <span
                 style={{
-                  fontSize: '0.75rem',
+                  fontSize: '0.78rem',
                   fontWeight: 600,
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  color: currentTheme.secondary,
+                  color: theme.primary,
                 }}
               >
                 {lang === 'hi' ? '04 प्रमुख निर्माण' : '04 Works in Spotlight'}
@@ -1015,7 +915,7 @@ export default function App() {
             </div>
 
             {/* Asymmetrical Editorial Project Showcase */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
               {projects.map((proj, idx) => {
                 const isEven = idx % 2 === 0
                 return (
@@ -1023,35 +923,36 @@ export default function App() {
                     key={proj.title}
                     style={{
                       borderRadius: '32px',
-                      backgroundColor: currentTheme.surface,
-                      border: `1px solid ${currentTheme.hairlineBorder}`,
-                      padding: 'clamp(1rem, 2.5vw, 2rem)',
+                      backgroundColor: theme.cardBg,
+                      border: `1px solid ${theme.hairlineBorder}`,
+                      padding: 'clamp(1.25rem, 3vw, 2.25rem)',
                       display: 'grid',
                       gridTemplateColumns: 'repeat(12, 1fr)',
-                      gap: 'clamp(1.5rem, 3vw, 2.5rem)',
+                      gap: 'clamp(1.75rem, 3.5vw, 3rem)',
                       alignItems: 'center',
-                      boxShadow: '0 12px 35px -10px rgba(0, 0, 0, 0.05)',
+                      boxShadow: '0 20px 50px -15px rgba(10, 2, 4, 0.65)',
+                      backdropFilter: 'blur(16px)',
                     }}
                   >
-                    {/* Media Frame */}
+                    {/* Media Frame with Generated Artwork */}
                     <div
                       style={{
-                        gridColumn: isEven ? 'span 7' : 'span 7',
+                        gridColumn: 'span 12',
                         order: isEven ? 1 : 2,
-                        borderRadius: '20px',
+                        borderRadius: '22px',
                         overflow: 'hidden',
                         position: 'relative',
-                        backgroundColor: currentTheme.surfaceLow,
-                        border: `1px solid ${currentTheme.hairlineBorder}`,
+                        backgroundColor: '#1E070B',
+                        border: `1px solid ${theme.hairlineBorder}`,
                       }}
-                      className="col-span-12 lg:col-span-7"
+                      className="lg:col-span-7"
                     >
                       <img
                         src={proj.image}
                         alt={proj.title}
                         style={{
                           width: '100%',
-                          height: 'clamp(280px, 32vw, 420px)',
+                          height: 'clamp(280px, 34vw, 440px)',
                           objectFit: 'cover',
                           display: 'block',
                           transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
@@ -1066,13 +967,14 @@ export default function App() {
                           left: '16px',
                           padding: '6px 14px',
                           borderRadius: '9999px',
-                          backgroundColor: `${currentTheme.bgCanvas}E6`,
+                          backgroundColor: 'rgba(38, 11, 15, 0.85)',
                           backdropFilter: 'blur(10px)',
-                          fontSize: '0.6875rem',
+                          fontSize: '0.72rem',
                           fontWeight: 600,
                           letterSpacing: '0.08em',
                           textTransform: 'uppercase',
-                          color: currentTheme.primary,
+                          color: theme.primary,
+                          border: `1px solid ${theme.hairlineBorder}`,
                         }}
                       >
                         {proj.tags[0]}
@@ -1082,34 +984,34 @@ export default function App() {
                     {/* Content Block */}
                     <div
                       style={{
-                        gridColumn: isEven ? 'span 5' : 'span 5',
+                        gridColumn: 'span 12',
                         order: isEven ? 2 : 1,
                         display: 'flex',
                         flexDirection: 'column',
                         gap: '1.25rem',
                       }}
-                      className="col-span-12 lg:col-span-5"
+                      className="lg:col-span-5"
                     >
                       <div>
                         <span
                           style={{
-                            fontSize: '0.6875rem',
+                            fontSize: '0.72rem',
                             fontWeight: 600,
                             letterSpacing: '0.1em',
                             textTransform: 'uppercase',
-                            color: currentTheme.secondary,
+                            color: theme.primary,
                           }}
                         >
                           Project {proj.number} · {lang === 'hi' ? proj.categoryHi : proj.category}
                         </span>
                         <h3
                           style={{
-                            fontFamily: "'Bodoni Moda', serif",
-                            fontSize: 'clamp(1.75rem, 3vw, 2.35rem)',
-                            fontWeight: 500,
+                            fontFamily: lang === 'hi' ? "'Rozha One', serif" : "'Playfair Display', serif",
+                            fontSize: 'clamp(1.85rem, 3.2vw, 2.45rem)',
+                            fontWeight: 800,
                             letterSpacing: '-0.02em',
-                            color: currentTheme.primary,
-                            margin: '0.35rem 0 0 0',
+                            color: theme.secondary,
+                            margin: '0.4rem 0 0 0',
                           }}
                         >
                           {proj.title}
@@ -1119,8 +1021,8 @@ export default function App() {
                       <p
                         style={{
                           margin: 0,
-                          fontSize: '0.95rem',
-                          color: currentTheme.subTextColor,
+                          fontSize: '0.98rem',
+                          color: theme.subTextColor,
                           lineHeight: 1.65,
                         }}
                       >
@@ -1133,15 +1035,15 @@ export default function App() {
                           <span
                             key={tag}
                             style={{
-                              padding: '5px 12px',
+                              padding: '5px 14px',
                               borderRadius: '9999px',
-                              backgroundColor: currentTheme.surfaceHigh,
-                              border: `1px solid ${currentTheme.hairlineBorder}`,
-                              fontSize: '0.6875rem',
+                              backgroundColor: 'rgba(72, 25, 35, 0.6)',
+                              border: `1px solid ${theme.hairlineBorder}`,
+                              fontSize: '0.72rem',
                               fontWeight: 600,
-                              letterSpacing: '0.05em',
+                              letterSpacing: '0.04em',
                               textTransform: 'uppercase',
-                              color: currentTheme.subTextColor,
+                              color: theme.secondary,
                             }}
                           >
                             {tag}
@@ -1150,7 +1052,7 @@ export default function App() {
                       </div>
 
                       {/* Action Link */}
-                      <div style={{ paddingTop: '0.25rem' }}>
+                      <div style={{ paddingTop: '0.5rem' }}>
                         <a
                           href={proj.link}
                           target="_blank"
@@ -1160,18 +1062,18 @@ export default function App() {
                             alignItems: 'center',
                             gap: '8px',
                             textDecoration: 'none',
-                            fontSize: '0.75rem',
+                            fontSize: '0.82rem',
                             fontWeight: 700,
-                            letterSpacing: '0.08em',
+                            letterSpacing: '0.06em',
                             textTransform: 'uppercase',
-                            color: currentTheme.primary,
-                            borderBottom: `1px solid ${currentTheme.primary}`,
-                            paddingBottom: '3px',
+                            color: theme.primary,
+                            borderBottom: `1.5px solid ${theme.primary}`,
+                            paddingBottom: '4px',
                             transition: 'opacity 0.2s ease',
                           }}
                         >
                           <span>{lang === 'hi' ? 'लाइव डेमो / कोड देखें' : 'View Comprehensive Case Study'}</span>
-                          <ArrowUpRight size={15} />
+                          <ArrowUpRight size={16} />
                         </a>
                       </div>
                     </div>
@@ -1183,16 +1085,16 @@ export default function App() {
         </section>
 
         {/* =========================================================================
-            SECTION 4: TECHNICAL COMPETENCIES (EDITORIAL TAXONOMY)
+            SECTION 4: TECHNICAL COMPETENCIES
             ========================================================================= */}
         <section
           id="competencies"
           style={{
             width: '100%',
-            backgroundColor: currentTheme.surfaceLow,
-            padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 4rem)',
-            borderTop: `1px solid ${currentTheme.hairlineBorder}`,
-            borderBottom: `1px solid ${currentTheme.hairlineBorder}`,
+            backgroundColor: theme.surfaceLow,
+            padding: 'clamp(3.5rem, 6vw, 5.5rem) clamp(1.25rem, 4vw, 4rem)',
+            borderTop: `1px solid ${theme.hairlineBorder}`,
+            borderBottom: `1px solid ${theme.hairlineBorder}`,
           }}
         >
           <div
@@ -1207,23 +1109,23 @@ export default function App() {
             <div>
               <span
                 style={{
-                  fontSize: '0.6875rem',
+                  fontSize: '0.72rem',
                   fontWeight: 600,
-                  letterSpacing: '0.1em',
+                  letterSpacing: '0.12em',
                   textTransform: 'uppercase',
-                  color: currentTheme.secondary,
+                  color: theme.primary,
                 }}
               >
                 Curated Skill Matrix
               </span>
               <h2
                 style={{
-                  fontFamily: "'Bodoni Moda', serif",
-                  fontSize: 'clamp(2rem, 4vw, 2.75rem)',
-                  fontWeight: 500,
+                  fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', serif",
+                  fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)',
+                  fontWeight: 800,
                   letterSpacing: '-0.02em',
-                  color: currentTheme.primary,
-                  margin: '0.25rem 0 0 0',
+                  color: theme.secondary,
+                  margin: '0.35rem 0 0 0',
                 }}
               >
                 {lang === 'hi' ? 'तकनीकी दक्षता और कौशल' : 'Technical Competencies'}
@@ -1241,21 +1143,22 @@ export default function App() {
                 <div
                   key={cat.title}
                   style={{
-                    backgroundColor: currentTheme.surface,
+                    backgroundColor: theme.surface,
                     borderRadius: '24px',
-                    padding: '2rem',
-                    border: `1px solid ${currentTheme.hairlineBorder}`,
+                    padding: '2.25rem',
+                    border: `1px solid ${theme.hairlineBorder}`,
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '1.25rem',
+                    boxShadow: '0 10px 30px rgba(10, 2, 4, 0.4)',
                   }}
                 >
                   <h3
                     style={{
-                      fontFamily: "'Bodoni Moda', serif",
-                      fontSize: '1.25rem',
-                      fontWeight: 600,
-                      color: currentTheme.primary,
+                      fontFamily: lang === 'hi' ? "'Rozha One', serif" : "'Playfair Display', serif",
+                      fontSize: '1.35rem',
+                      fontWeight: 700,
+                      color: theme.secondary,
                       margin: 0,
                     }}
                   >
@@ -1267,13 +1170,13 @@ export default function App() {
                       <span
                         key={s}
                         style={{
-                          padding: '6px 14px',
+                          padding: '7px 16px',
                           borderRadius: '9999px',
-                          backgroundColor: currentTheme.surfaceHigh,
-                          border: `1px solid ${currentTheme.hairlineBorder}`,
-                          fontSize: '0.75rem',
-                          fontWeight: 500,
-                          color: currentTheme.textColor,
+                          backgroundColor: 'rgba(72, 25, 35, 0.65)',
+                          border: `1px solid ${theme.hairlineBorder}`,
+                          fontSize: '0.78rem',
+                          fontWeight: 600,
+                          color: theme.secondary,
                         }}
                       >
                         {s}
@@ -1293,7 +1196,7 @@ export default function App() {
           id="certifications"
           style={{
             width: '100%',
-            padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 4rem)',
+            padding: 'clamp(3.5rem, 6vw, 5.5rem) clamp(1.25rem, 4vw, 4rem)',
           }}
         >
           <div
@@ -1305,40 +1208,30 @@ export default function App() {
               gap: '2.5rem',
             }}
           >
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'flex-end',
-                justifyContent: 'space-between',
-                gap: '1rem',
-              }}
-            >
-              <div>
-                <span
-                  style={{
-                    fontSize: '0.6875rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    color: currentTheme.secondary,
-                  }}
-                >
-                  Verified Credentials
-                </span>
-                <h2
-                  style={{
-                    fontFamily: "'Bodoni Moda', serif",
-                    fontSize: 'clamp(2rem, 4vw, 2.75rem)',
-                    fontWeight: 500,
-                    letterSpacing: '-0.02em',
-                    color: currentTheme.primary,
-                    margin: '0.25rem 0 0 0',
-                  }}
-                >
-                  {lang === 'hi' ? 'प्रमाणपत्र और विशिष्टताएं' : 'Certifications & Honors'}
-                </h2>
-              </div>
+            <div>
+              <span
+                style={{
+                  fontSize: '0.72rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: theme.primary,
+                }}
+              >
+                Verified Credentials
+              </span>
+              <h2
+                style={{
+                  fontFamily: lang === 'hi' ? "'Rozha One', 'Yatra One', serif" : "'Playfair Display', serif",
+                  fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)',
+                  fontWeight: 800,
+                  letterSpacing: '-0.02em',
+                  color: theme.secondary,
+                  margin: '0.35rem 0 0 0',
+                }}
+              >
+                {lang === 'hi' ? 'प्रमाणपत्र और विशिष्टताएं' : 'Certifications & Honors'}
+              </h2>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -1346,59 +1239,60 @@ export default function App() {
                 <div
                   key={c.title}
                   style={{
-                    backgroundColor: currentTheme.surface,
+                    backgroundColor: theme.surface,
                     borderRadius: '24px',
-                    padding: 'clamp(1.25rem, 3vw, 2rem)',
-                    border: `1px solid ${currentTheme.hairlineBorder}`,
+                    padding: 'clamp(1.5rem, 3vw, 2.25rem)',
+                    border: `1px solid ${theme.hairlineBorder}`,
                     display: 'flex',
                     flexWrap: 'wrap',
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     gap: '1.5rem',
+                    boxShadow: '0 12px 30px rgba(10, 2, 4, 0.4)',
                   }}
                 >
                   <div style={{ flex: '1 1 340px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
                       <span
                         style={{
-                          padding: '4px 10px',
+                          padding: '4px 12px',
                           borderRadius: '9999px',
-                          backgroundColor: currentTheme.surfaceHigh,
-                          fontSize: '0.6875rem',
+                          backgroundColor: 'rgba(184, 114, 119, 0.35)',
+                          fontSize: '0.72rem',
                           fontWeight: 700,
                           textTransform: 'uppercase',
                           letterSpacing: '0.08em',
-                          color: currentTheme.goldAccent,
+                          color: theme.primary,
                         }}
                       >
                         {lang === 'hi' ? c.badgeHi : c.badge}
                       </span>
-                      <span style={{ fontSize: '0.75rem', color: currentTheme.secondary }}>{c.issuer}</span>
+                      <span style={{ fontSize: '0.8rem', color: theme.subTextColor }}>{c.issuer}</span>
                     </div>
 
                     <h3
                       style={{
-                        fontFamily: "'Bodoni Moda', serif",
-                        fontSize: '1.4rem',
-                        fontWeight: 600,
-                        color: currentTheme.primary,
+                        fontFamily: lang === 'hi' ? "'Rozha One', serif" : "'Playfair Display', serif",
+                        fontSize: '1.55rem',
+                        fontWeight: 800,
+                        color: theme.secondary,
                         margin: '0 0 8px 0',
                       }}
                     >
                       {lang === 'hi' ? c.titleHi : c.title}
                     </h3>
-                    <p style={{ margin: 0, fontSize: '0.88rem', color: currentTheme.subTextColor, lineHeight: 1.55 }}>
+                    <p style={{ margin: 0, fontSize: '0.92rem', color: theme.subTextColor, lineHeight: 1.55 }}>
                       {c.description}
                     </p>
                   </div>
 
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
                     <span
                       style={{
-                        fontFamily: "'Bodoni Moda', serif",
-                        fontSize: '1.2rem',
-                        color: currentTheme.primary,
-                        fontWeight: 500,
+                        fontFamily: "'Playfair Display', serif",
+                        fontSize: '1.35rem',
+                        color: theme.primary,
+                        fontWeight: 700,
                       }}
                     >
                       {c.score}
@@ -1411,16 +1305,16 @@ export default function App() {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '6px',
-                        padding: '10px 18px',
-                        borderRadius: '8px',
-                        backgroundColor: currentTheme.surfaceHigh,
-                        color: currentTheme.primary,
-                        fontSize: '0.75rem',
+                        padding: '11px 22px',
+                        borderRadius: '9999px',
+                        backgroundColor: theme.ctaRose,
+                        color: '#FFFFFF',
+                        fontSize: '0.78rem',
                         fontWeight: 600,
-                        letterSpacing: '0.08em',
+                        letterSpacing: '0.06em',
                         textTransform: 'uppercase',
                         textDecoration: 'none',
-                        border: `1px solid ${currentTheme.hairlineBorder}`,
+                        boxShadow: '0 8px 20px rgba(184, 114, 119, 0.4)',
                       }}
                     >
                       <span>{lang === 'hi' ? 'सत्यापित करें' : 'Verify Certificate'}</span>
@@ -1434,17 +1328,18 @@ export default function App() {
         </section>
 
         {/* =========================================================================
-            SECTION 6: EDITORIAL MANIFESTO CALLOUT & ABOUT ME
+            SECTION 6: ABOUT & ENGINEERING PHILOSOPHY
             ========================================================================= */}
         <section
           id="about"
           style={{
             width: '100%',
-            backgroundColor: currentTheme.surfaceHigh,
-            padding: 'clamp(3.5rem, 6vw, 5.5rem) clamp(1.25rem, 4vw, 4rem)',
+            backgroundColor: theme.surfaceLow,
+            padding: 'clamp(4rem, 7vw, 6rem) clamp(1.25rem, 4vw, 4rem)',
             borderRadius: '36px',
             maxWidth: '1440px',
-            margin: '0 auto clamp(3rem, 6vw, 5rem)',
+            margin: '0 auto clamp(3.5rem, 6vw, 5.5rem)',
+            border: `1px solid ${theme.hairlineBorder}`,
           }}
         >
           <div
@@ -1455,16 +1350,16 @@ export default function App() {
               flexDirection: 'column',
               alignItems: 'center',
               textAlign: 'center',
-              gap: '2rem',
+              gap: '2.25rem',
             }}
           >
             <span
               style={{
-                fontSize: '0.6875rem',
+                fontSize: '0.72rem',
                 fontWeight: 600,
                 letterSpacing: '0.15em',
                 textTransform: 'uppercase',
-                color: currentTheme.secondary,
+                color: theme.primary,
               }}
             >
               {lang === 'hi' ? 'दर्शन और दृष्टिकोण' : 'Engineering Philosophy & Stance'}
@@ -1472,12 +1367,12 @@ export default function App() {
 
             <blockquote
               style={{
-                fontFamily: "'Bodoni Moda', serif",
-                fontSize: 'clamp(1.6rem, 3.5vw, 2.5rem)',
+                fontFamily: lang === 'hi' ? "'Rozha One', serif" : "'Playfair Display', serif",
+                fontSize: 'clamp(1.75rem, 3.8vw, 2.75rem)',
                 lineHeight: 1.35,
-                fontWeight: 400,
+                fontWeight: 700,
                 fontStyle: 'italic',
-                color: currentTheme.primary,
+                color: theme.secondary,
                 margin: 0,
               }}
             >
@@ -1486,32 +1381,33 @@ export default function App() {
                 : '“True intelligence in engineering is not complexity for its own sake, but crafting algorithms and systems that feel effortless, intuitive, and profoundly human.”'}
             </blockquote>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
               <div
                 style={{
-                  width: '40px',
-                  height: '40px',
+                  width: '44px',
+                  height: '44px',
                   borderRadius: '50%',
-                  backgroundColor: currentTheme.primary,
-                  color: currentTheme.bgCanvas,
+                  backgroundColor: theme.primary,
+                  color: '#260B0F',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontFamily: "'Bodoni Moda', serif",
-                  fontSize: '1rem',
+                  fontFamily: "'Oswald', sans-serif",
+                  fontSize: '1.1rem',
                   fontWeight: 700,
+                  boxShadow: `0 0 16px ${theme.glowRose}`,
                 }}
               >
                 DP
               </div>
               <div style={{ textAlign: 'left' }}>
-                <div style={{ fontWeight: 600, fontSize: '0.95rem', color: currentTheme.primary }}>
+                <div style={{ fontWeight: 700, fontSize: '1.05rem', color: theme.secondary }}>
                   Deepesh Patel
                 </div>
                 <div
                   style={{
-                    fontSize: '0.75rem',
-                    color: currentTheme.secondary,
+                    fontSize: '0.78rem',
+                    color: theme.subTextColor,
                     letterSpacing: '0.08em',
                     textTransform: 'uppercase',
                   }}
@@ -1525,9 +1421,9 @@ export default function App() {
               style={{
                 marginTop: '1rem',
                 paddingTop: '1.5rem',
-                borderTop: `1px solid ${currentTheme.hairlineBorder}`,
-                fontSize: '1rem',
-                color: currentTheme.subTextColor,
+                borderTop: `1px solid ${theme.hairlineBorder}`,
+                fontSize: '1.02rem',
+                color: theme.subTextColor,
                 lineHeight: 1.7,
                 textAlign: 'center',
                 maxWidth: '780px',
@@ -1535,7 +1431,7 @@ export default function App() {
             >
               <p style={{ margin: '0 0 1rem 0' }}>
                 {lang === 'hi'
-                  ? 'मैं एकोपोलिस इंस्टीट्यूट ऑफ टेक्नोलॉजी एंड रिसर्च में आर्टिफिशियल इंटेलिजेंस और मशीन लर्निंग का छात्र हूँ। कोडिंग और मॉडल आर्किटेक्चर के अलावा, मैं मानसिक दृढ़ता और अनुशासन विकसित करने के लिए लंबी दूरी की दौड़ का अभ्यास करता हूँ।'
+                  ? 'मैं एकोपोलिस इंस्टीट्यूट ऑफ टेक्नोलॉजी एंड रिसर्च में आर्टिफिशियल इंटेलिजेंस और मशीन लर्निंग का छात्र हूँ। कोडिंग और मॉडल आर्किटेक्चर के अलावा, मैं मानसिक दृढ़ता और अनुशासन विकसित करने के लिए नियमित लंबी दूरी की दौड़ का अभ्यास करता हूँ।'
                   : 'I am an AI & Machine Learning undergraduate at Acropolis Institute of Technology and Research. Beyond code, I practice regular long-distance running to build discipline, mental resilience, and steady focus.'}
               </p>
             </div>
@@ -1546,12 +1442,12 @@ export default function App() {
             SECTION 7: PRANA AI COPILOT WORKSPACE CONSOLE
             ========================================================================= */}
         <section
-          id="ai-copilot"
+          id="contact"
           style={{
             width: '100%',
-            backgroundColor: currentTheme.surfaceLow,
-            padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 4rem)',
-            borderTop: `1px solid ${currentTheme.hairlineBorder}`,
+            backgroundColor: theme.surfaceLow,
+            padding: 'clamp(3.5rem, 6vw, 5.5rem) clamp(1.25rem, 4vw, 4rem)',
+            borderTop: `1px solid ${theme.hairlineBorder}`,
           }}
         >
           <div
@@ -1567,33 +1463,33 @@ export default function App() {
             <div
               style={{
                 width: '100%',
-                backgroundColor: currentTheme.surface,
-                borderRadius: '20px',
-                padding: '1.25rem 2rem',
-                border: `1px solid ${currentTheme.hairlineBorder}`,
+                backgroundColor: theme.surface,
+                borderRadius: '24px',
+                padding: '1.5rem 2.25rem',
+                border: `1px solid ${theme.hairlineBorder}`,
                 display: 'flex',
                 flexWrap: 'wrap',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                gap: '1rem',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.03)',
+                gap: '1.25rem',
+                boxShadow: '0 12px 30px rgba(10, 2, 4, 0.4)',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                 <div
                   style={{
-                    width: '42px',
-                    height: '42px',
+                    width: '46px',
+                    height: '46px',
                     borderRadius: '50%',
-                    backgroundColor: currentTheme.surfaceHigh,
+                    backgroundColor: 'rgba(184, 114, 119, 0.35)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: currentTheme.primary,
+                    color: theme.primary,
                     position: 'relative',
                   }}
                 >
-                  <Bot size={22} />
+                  <Bot size={24} />
                   <span
                     style={{
                       position: 'absolute',
@@ -1602,7 +1498,8 @@ export default function App() {
                       width: '10px',
                       height: '10px',
                       borderRadius: '50%',
-                      backgroundColor: currentTheme.goldAccent,
+                      backgroundColor: theme.primary,
+                      boxShadow: `0 0 10px ${theme.primary}`,
                     }}
                   />
                 </div>
@@ -1610,30 +1507,30 @@ export default function App() {
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <span
                       style={{
-                        fontFamily: "'Bodoni Moda', serif",
-                        fontSize: '1.35rem',
-                        fontWeight: 600,
-                        color: currentTheme.primary,
+                        fontFamily: "'Playfair Display', serif",
+                        fontSize: '1.45rem',
+                        fontWeight: 800,
+                        color: theme.secondary,
                       }}
                     >
                       PRANA AI
                     </span>
                     <span
                       style={{
-                        padding: '2px 8px',
+                        padding: '3px 10px',
                         borderRadius: '9999px',
-                        backgroundColor: currentTheme.surfaceVariant,
-                        fontSize: '0.65rem',
+                        backgroundColor: 'rgba(72, 25, 35, 0.65)',
+                        fontSize: '0.68rem',
                         fontWeight: 700,
                         letterSpacing: '0.08em',
                         textTransform: 'uppercase',
-                        color: currentTheme.secondary,
+                        color: theme.primary,
                       }}
                     >
                       v2.4 Core
                     </span>
                   </div>
-                  <div style={{ fontSize: '0.8rem', color: currentTheme.secondary }}>
+                  <div style={{ fontSize: '0.82rem', color: theme.subTextColor }}>
                     {lang === 'hi' ? 'दीपेश पटेल का डिजिटल कोपायलट' : 'Deepesh Patel’s Spatial Copilot & Computational Twin'}
                   </div>
                 </div>
@@ -1644,30 +1541,31 @@ export default function App() {
                   display: 'flex',
                   flexWrap: 'wrap',
                   gap: '1.5rem',
-                  fontSize: '0.75rem',
-                  color: currentTheme.secondary,
+                  fontSize: '0.78rem',
+                  color: theme.subTextColor,
                   alignItems: 'center',
                 }}
               >
                 <div>
-                  Model: <strong style={{ color: currentTheme.primary }}>Gemini API Dual-Engine</strong>
+                  Model: <strong style={{ color: theme.primary }}>Gemini Dual-Engine</strong>
                 </div>
                 <div>
-                  Resonance: <strong style={{ color: currentTheme.primary }}>99.4% Synchronized</strong>
+                  Resonance: <strong style={{ color: theme.primary }}>99.4% Sync</strong>
                 </div>
                 <button
                   onClick={() => setIsChatOpen(true)}
                   style={{
-                    padding: '8px 16px',
-                    borderRadius: '8px',
-                    backgroundColor: currentTheme.primary,
-                    color: currentTheme.bgCanvas,
-                    fontSize: '0.75rem',
+                    padding: '10px 22px',
+                    borderRadius: '9999px',
+                    backgroundColor: theme.ctaRose,
+                    color: '#FFFFFF',
+                    fontSize: '0.78rem',
                     fontWeight: 600,
                     letterSpacing: '0.06em',
                     textTransform: 'uppercase',
                     border: 'none',
                     cursor: 'pointer',
+                    boxShadow: '0 8px 20px rgba(184, 114, 119, 0.4)',
                   }}
                 >
                   {lang === 'hi' ? 'कोपायलट खोलें' : 'Launch Copilot'}
@@ -1684,9 +1582,9 @@ export default function App() {
       <footer
         style={{
           width: '100%',
-          backgroundColor: currentTheme.surface,
-          borderTop: `1px solid ${currentTheme.hairlineBorder}`,
-          padding: 'clamp(3rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 4rem)',
+          backgroundColor: '#1E070B',
+          borderTop: `1px solid ${theme.hairlineBorder}`,
+          padding: 'clamp(3.5rem, 6vw, 5rem) clamp(1.25rem, 4vw, 4rem)',
         }}
       >
         <div
@@ -1708,30 +1606,30 @@ export default function App() {
           >
             {/* Column 1: Monogram & Bio */}
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
                 <div
                   style={{
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '50%',
-                    backgroundColor: currentTheme.primary,
-                    color: currentTheme.bgCanvas,
+                    width: '34px',
+                    height: '34px',
+                    borderRadius: '10px',
+                    backgroundColor: theme.primary,
+                    color: '#260B0F',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontFamily: "'Bodoni Moda', serif",
+                    fontFamily: "'Oswald', sans-serif",
                     fontWeight: 700,
-                    fontSize: '0.9rem',
+                    fontSize: '0.95rem',
                   }}
                 >
                   DP
                 </div>
                 <span
                   style={{
-                    fontFamily: "'Bodoni Moda', serif",
-                    fontSize: '1.25rem',
-                    fontWeight: 600,
-                    color: currentTheme.primary,
+                    fontFamily: "'Playfair Display', serif",
+                    fontSize: '1.35rem',
+                    fontWeight: 700,
+                    color: theme.secondary,
                   }}
                 >
                   Deepesh Patel
@@ -1740,8 +1638,8 @@ export default function App() {
               <p
                 style={{
                   margin: 0,
-                  fontSize: '0.88rem',
-                  color: currentTheme.subTextColor,
+                  fontSize: '0.9rem',
+                  color: theme.subTextColor,
                   lineHeight: 1.6,
                   maxWidth: '340px',
                 }}
@@ -1756,11 +1654,11 @@ export default function App() {
             <div>
               <div
                 style={{
-                  fontSize: '0.6875rem',
+                  fontSize: '0.72rem',
                   fontWeight: 600,
-                  letterSpacing: '0.1em',
+                  letterSpacing: '0.12em',
                   textTransform: 'uppercase',
-                  color: currentTheme.secondary,
+                  color: theme.primary,
                   marginBottom: '14px',
                 }}
               >
@@ -1769,31 +1667,31 @@ export default function App() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <a
                   href="#home"
-                  style={{ textDecoration: 'none', color: currentTheme.textColor, fontSize: '0.88rem' }}
+                  style={{ textDecoration: 'none', color: theme.secondary, fontSize: '0.9rem' }}
                 >
                   Home / Namaskaram
                 </a>
                 <a
-                  href="#featured-works"
-                  style={{ textDecoration: 'none', color: currentTheme.textColor, fontSize: '0.88rem' }}
+                  href="#projects"
+                  style={{ textDecoration: 'none', color: theme.secondary, fontSize: '0.9rem' }}
                 >
                   Selected Works
                 </a>
                 <a
                   href="#metrics"
-                  style={{ textDecoration: 'none', color: currentTheme.textColor, fontSize: '0.88rem' }}
+                  style={{ textDecoration: 'none', color: theme.secondary, fontSize: '0.9rem' }}
                 >
                   Practicum & Metrics
                 </a>
                 <a
                   href="#competencies"
-                  style={{ textDecoration: 'none', color: currentTheme.textColor, fontSize: '0.88rem' }}
+                  style={{ textDecoration: 'none', color: theme.secondary, fontSize: '0.9rem' }}
                 >
                   Competencies
                 </a>
                 <a
                   href="#certifications"
-                  style={{ textDecoration: 'none', color: currentTheme.textColor, fontSize: '0.88rem' }}
+                  style={{ textDecoration: 'none', color: theme.secondary, fontSize: '0.9rem' }}
                 >
                   Certifications
                 </a>
@@ -1804,11 +1702,11 @@ export default function App() {
             <div>
               <div
                 style={{
-                  fontSize: '0.6875rem',
+                  fontSize: '0.72rem',
                   fontWeight: 600,
-                  letterSpacing: '0.1em',
+                  letterSpacing: '0.12em',
                   textTransform: 'uppercase',
-                  color: currentTheme.secondary,
+                  color: theme.primary,
                   marginBottom: '14px',
                 }}
               >
@@ -1822,8 +1720,8 @@ export default function App() {
                     alignItems: 'center',
                     gap: '8px',
                     textDecoration: 'none',
-                    color: currentTheme.textColor,
-                    fontSize: '0.88rem',
+                    color: theme.secondary,
+                    fontSize: '0.9rem',
                   }}
                 >
                   <Mail size={16} />
@@ -1838,8 +1736,8 @@ export default function App() {
                     alignItems: 'center',
                     gap: '8px',
                     textDecoration: 'none',
-                    color: currentTheme.textColor,
-                    fontSize: '0.88rem',
+                    color: theme.secondary,
+                    fontSize: '0.9rem',
                   }}
                 >
                   <Linkedin size={16} />
@@ -1854,8 +1752,8 @@ export default function App() {
                     alignItems: 'center',
                     gap: '8px',
                     textDecoration: 'none',
-                    color: currentTheme.textColor,
-                    fontSize: '0.88rem',
+                    color: theme.secondary,
+                    fontSize: '0.9rem',
                   }}
                 >
                   <Github size={16} />
@@ -1868,17 +1766,17 @@ export default function App() {
           <div
             style={{
               paddingTop: '2rem',
-              borderTop: `1px solid ${currentTheme.hairlineBorder}`,
+              borderTop: `1px solid ${theme.hairlineBorder}`,
               display: 'flex',
               flexWrap: 'wrap',
               alignItems: 'center',
               justifyContent: 'space-between',
               gap: '1rem',
-              fontSize: '0.75rem',
-              color: currentTheme.secondary,
+              fontSize: '0.78rem',
+              color: theme.subTextColor,
             }}
           >
-            <div>© 2026 Deepesh Patel. All rights reserved. Crafted with Warm Editorial Studio.</div>
+            <div>© 2026 Deepesh Patel. All rights reserved. Crafted in Oxblood Red & Dusky Rose.</div>
             <div>B.Tech AI & Machine Learning · Acropolis Institute of Technology & Research</div>
           </div>
         </div>
@@ -1886,7 +1784,19 @@ export default function App() {
 
       {/* PRANA AI Floating Chatbox Component */}
       <Chatbox
-        currentTheme={currentTheme}
+        currentTheme={{
+          bgCanvas: theme.bgCanvas,
+          surfaceLow: theme.surfaceLow,
+          surface: theme.surface,
+          surfaceHigh: theme.surfaceHigh,
+          surfaceVariant: theme.surfaceVariant,
+          primary: theme.ctaRose,
+          secondary: theme.primary,
+          textColor: theme.secondary,
+          subTextColor: theme.subTextColor,
+          hairlineBorder: theme.hairlineBorder,
+          goldAccent: theme.goldAccent,
+        }}
         lang={lang}
         isOpen={isChatOpen}
         onToggle={() => setIsChatOpen(!isChatOpen)}
