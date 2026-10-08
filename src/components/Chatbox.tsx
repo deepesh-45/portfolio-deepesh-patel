@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { X, Send, Bot, Terminal } from 'lucide-react'
+import { X, Send } from 'lucide-react'
 
 interface Message {
   role: 'user' | 'assistant'
@@ -127,7 +127,7 @@ export const Chatbox = ({ currentTheme, lang, isOpen: controlledIsOpen, onToggle
 
   return (
     <>
-      {/* Floating Trigger Button */}
+      {/* Floating Trigger Button Featuring AI Avatar */}
       <button
         onClick={toggleChat}
         aria-label="Open AI Assistant"
@@ -138,33 +138,82 @@ export const Chatbox = ({ currentTheme, lang, isOpen: controlledIsOpen, onToggle
           zIndex: 9999,
           display: 'flex',
           alignItems: 'center',
-          gap: '10px',
-          padding: '12px 20px',
+          gap: '12px',
+          padding: '8px 18px 8px 8px',
           borderRadius: '9999px',
-          backgroundColor: currentTheme.primary,
+          backgroundColor: 'rgba(57, 19, 27, 0.94)',
           color: '#FFFFFF',
-          border: `1px solid ${currentTheme.hairlineBorder}`,
-          boxShadow: '0 12px 30px rgba(0,0,0,0.18)',
+          border: `1.5px solid ${currentTheme.hairlineBorder}`,
+          boxShadow: '0 14px 38px rgba(10, 2, 4, 0.65)',
           cursor: 'pointer',
           fontFamily: "'Plus Jakarta Sans', sans-serif",
-          fontSize: '0.875rem',
-          fontWeight: 600,
-          letterSpacing: '0.04em',
-          textTransform: 'uppercase',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
           transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)'
+          e.currentTarget.style.borderColor = currentTheme.primary
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'translateY(0) scale(1.0)'
+          e.currentTarget.style.borderColor = currentTheme.hairlineBorder
+        }}
       >
-        <span
-          style={{
-            width: '8px',
-            height: '8px',
-            borderRadius: '50%',
-            backgroundColor: currentTheme.goldAccent,
-            boxShadow: `0 0 10px ${currentTheme.goldAccent}`,
-          }}
-        />
-        <Bot size={18} />
-        <span>{lang === 'hi' ? 'एआई असिस्टेंट' : 'AI Assistant'}</span>
+        {/* User's 3D AI Avatar */}
+        <div style={{ position: 'relative', width: '40px', height: '40px', flexShrink: 0 }}>
+          <img
+            src="/ai-avatar.jpg"
+            alt="AI Assistant Avatar"
+            style={{
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              objectFit: 'cover',
+              border: `1.5px solid ${currentTheme.primary}`,
+              boxShadow: '0 4px 14px rgba(0,0,0,0.4)',
+              display: 'block',
+            }}
+          />
+          {/* Active Status Pulse */}
+          <span
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              right: 0,
+              width: '10px',
+              height: '10px',
+              borderRadius: '50%',
+              backgroundColor: '#22c55e',
+              border: '2px solid #260B0F',
+              boxShadow: '0 0 8px rgba(34, 197, 94, 0.8)',
+            }}
+          />
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left' }}>
+          <span
+            style={{
+              fontSize: '0.88rem',
+              fontWeight: 700,
+              color: '#FFFFFF',
+              lineHeight: 1.2,
+            }}
+          >
+            {lang === 'hi' ? 'एआई असिस्टेंट' : 'AI Assistant'}
+          </span>
+          <span
+            style={{
+              fontSize: '0.7rem',
+              color: currentTheme.subTextColor,
+              fontWeight: 500,
+              lineHeight: 1.2,
+              marginTop: '2px',
+            }}
+          >
+            {lang === 'hi' ? 'ऑनलाइन · पूछें कुछ भी' : 'Online · Ask anything'}
+          </span>
+        </div>
       </button>
 
       {/* Slide-over Editorial Drawer / Chat Window */}
@@ -188,7 +237,7 @@ export const Chatbox = ({ currentTheme, lang, isOpen: controlledIsOpen, onToggle
             animation: 'fadeInUp 0.25s ease-out',
           }}
         >
-          {/* Telemetry Header */}
+          {/* Header Featuring 3D AI Avatar */}
           <div
             style={{
               padding: '16px 20px',
@@ -196,66 +245,50 @@ export const Chatbox = ({ currentTheme, lang, isOpen: controlledIsOpen, onToggle
               borderBottom: `1px solid ${currentTheme.hairlineBorder}`,
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'between',
+              justifyContent: 'space-between',
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1 }}>
-              <div
-                style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '50%',
-                  backgroundColor: currentTheme.surfaceVariant,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: currentTheme.primary,
-                  position: 'relative',
-                }}
-              >
-                <Terminal size={18} />
+              <div style={{ position: 'relative', width: '42px', height: '42px', flexShrink: 0 }}>
+                <img
+                  src="/ai-avatar.jpg"
+                  alt="Deepesh AI Avatar"
+                  style={{
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    border: `1.5px solid ${currentTheme.primary}`,
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                    display: 'block',
+                  }}
+                />
                 <span
                   style={{
                     position: 'absolute',
-                    top: '-2px',
-                    right: '-2px',
-                    width: '9px',
-                    height: '9px',
+                    bottom: 0,
+                    right: 0,
+                    width: '10px',
+                    height: '10px',
                     borderRadius: '50%',
-                    backgroundColor: currentTheme.goldAccent,
+                    backgroundColor: '#22c55e',
+                    border: '2px solid #260B0F',
                   }}
                 />
               </div>
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span
-                    style={{
-                      fontFamily: "'Bodoni Moda', serif",
-                      fontSize: '1.15rem',
-                      fontWeight: 600,
-                      color: currentTheme.primary,
-                      letterSpacing: '-0.01em',
-                    }}
-                  >
-                    PRANA AI
-                  </span>
-                  <span
-                    style={{
-                      fontSize: '0.65rem',
-                      padding: '2px 8px',
-                      borderRadius: '9999px',
-                      backgroundColor: currentTheme.surfaceVariant,
-                      color: currentTheme.secondary,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      fontWeight: 700,
-                    }}
-                  >
-                    v2.4 Core
-                  </span>
+                <div
+                  style={{
+                    fontFamily: "'Playfair Display', serif",
+                    fontWeight: 700,
+                    fontSize: '1.15rem',
+                    color: currentTheme.textColor,
+                  }}
+                >
+                  {lang === 'hi' ? 'पोर्टफोलियो एआई असिस्टेंट' : 'Portfolio AI Assistant'}
                 </div>
-                <div style={{ fontSize: '0.75rem', color: currentTheme.secondary }}>
-                  {lang === 'hi' ? 'दीपेश पटेल का न्यूरल कोपायलट' : 'Deepesh Patel’s Spatial Copilot'}
+                <div style={{ fontSize: '0.76rem', color: currentTheme.subTextColor }}>
+                  {lang === 'hi' ? 'ऑनलाइन · जेमिनी एआई द्वारा संचालित' : 'Online · Powered by Gemini API'}
                 </div>
               </div>
             </div>
@@ -265,7 +298,7 @@ export const Chatbox = ({ currentTheme, lang, isOpen: controlledIsOpen, onToggle
               style={{
                 background: 'none',
                 border: 'none',
-                color: currentTheme.secondary,
+                color: currentTheme.textColor,
                 cursor: 'pointer',
                 padding: '6px',
                 borderRadius: '50%',
@@ -277,25 +310,6 @@ export const Chatbox = ({ currentTheme, lang, isOpen: controlledIsOpen, onToggle
             >
               <X size={20} />
             </button>
-          </div>
-
-          {/* Quick Telemetry Status Ribbon */}
-          <div
-            style={{
-              padding: '6px 20px',
-              backgroundColor: currentTheme.surfaceVariant,
-              fontSize: '0.68rem',
-              color: currentTheme.secondary,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-            }}
-          >
-            <span>Model: Gemini / Neural Engine</span>
-            <span>Sync: 99.4%</span>
-            <span>Studio Clearance</span>
           </div>
 
           {/* Messages Area */}
@@ -318,7 +332,7 @@ export const Chatbox = ({ currentTheme, lang, isOpen: controlledIsOpen, onToggle
                   padding: '12px 16px',
                   borderRadius: m.role === 'user' ? '18px 18px 4px 18px' : '18px 18px 18px 4px',
                   backgroundColor: m.role === 'user' ? currentTheme.primary : currentTheme.surfaceLow,
-                  color: m.role === 'user' ? currentTheme.bgCanvas : currentTheme.textColor,
+                  color: '#FFFFFF',
                   fontSize: '0.92rem',
                   lineHeight: 1.55,
                   border: m.role === 'user' ? 'none' : `1px solid ${currentTheme.hairlineBorder}`,
@@ -342,7 +356,7 @@ export const Chatbox = ({ currentTheme, lang, isOpen: controlledIsOpen, onToggle
                   fontStyle: 'italic',
                 }}
               >
-                {lang === 'hi' ? 'प्राण विचार कर रहा है...' : 'Synthesizing response...'}
+                {lang === 'hi' ? 'एआई सोच रहा है...' : 'AI is typing...'}
               </div>
             )}
             <div ref={messagesEndRef} />

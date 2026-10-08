@@ -377,7 +377,7 @@ export default function App() {
       </header>
 
       {/* Main Content Area */}
-      <main style={{ paddingTop: '80px', width: '100%' }}>
+      <main style={{ width: '100%' }}>
         {/* =========================================================================
             SECTION 1: CINEMATIC BACKGROUND VIDEO HERO (3D AVATAR ON RIGHT, CRISP TEXT ON LEFT)
             ========================================================================= */
@@ -386,7 +386,8 @@ export default function App() {
           style={{
             position: 'relative',
             width: '100%',
-            minHeight: 'calc(100vh - 80px)',
+            height: '100vh',
+            minHeight: '100vh',
             display: 'flex',
             alignItems: 'center',
             overflow: 'hidden',
@@ -405,7 +406,7 @@ export default function App() {
               width: '100%',
               maxWidth: '1440px',
               margin: '0 auto',
-              padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 4rem)',
+              padding: 'clamp(5.5rem, 8vw, 6.5rem) clamp(1.25rem, 4vw, 4rem) 2rem',
               display: 'flex',
               alignItems: 'center',
             }}

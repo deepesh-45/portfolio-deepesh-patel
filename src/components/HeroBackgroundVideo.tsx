@@ -1,5 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
-import { Play, Pause } from 'lucide-react'
+import { useRef, useEffect, useState } from 'react'
 
 interface HeroBackgroundVideoProps {
   videoSrc?: string
@@ -8,10 +7,8 @@ interface HeroBackgroundVideoProps {
 
 export const HeroBackgroundVideo = ({
   videoSrc = '/hero-avatar-namaskaram.mp4',
-  lang = 'en',
 }: HeroBackgroundVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [isPlaying, setIsPlaying] = useState(true)
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
@@ -25,9 +22,7 @@ export const HeroBackgroundVideo = ({
       setIsLoaded(true)
       const playPromise = video.play()
       if (playPromise !== undefined) {
-        playPromise
-          .then(() => setIsPlaying(true))
-          .catch(() => setIsPlaying(false))
+        playPromise.catch(() => {})
       }
     }
 
@@ -48,19 +43,6 @@ export const HeroBackgroundVideo = ({
       video.removeEventListener('ended', handleEnded)
     }
   }, [videoSrc])
-
-  const togglePlay = () => {
-    const video = videoRef.current
-    if (!video) return
-
-    if (video.paused) {
-      video.play()
-      setIsPlaying(true)
-    } else {
-      video.pause()
-      setIsPlaying(false)
-    }
-  }
 
   return (
     <div
@@ -157,52 +139,6 @@ export const HeroBackgroundVideo = ({
           zIndex: 3,
         }}
       />
-
-      {/* Discreet Video Control Pill in Bottom Right (No decorative legends) */}
-      <div
-        style={{
-          position: 'absolute',
-          bottom: '24px',
-          right: 'clamp(16px, 3vw, 40px)',
-          zIndex: 20,
-          pointerEvents: 'auto',
-        }}
-      >
-        <button
-          onClick={togglePlay}
-          aria-label={isPlaying ? 'Pause Background Video' : 'Play Background Video'}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '7px 14px',
-            borderRadius: '9999px',
-            backgroundColor: 'rgba(38, 11, 15, 0.8)',
-            border: '1px solid rgba(212, 155, 158, 0.3)',
-            color: '#F5DBD5',
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontSize: '0.72rem',
-            fontWeight: 600,
-            letterSpacing: '0.04em',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease',
-            boxShadow: '0 4px 16px rgba(0,0,0,0.4)',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(57, 19, 27, 0.95)'
-            e.currentTarget.style.borderColor = '#D49B9E'
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(38, 11, 15, 0.8)'
-            e.currentTarget.style.borderColor = 'rgba(212, 155, 158, 0.3)'
-          }}
-        >
-          {isPlaying ? <Pause size={11} fill="#F5DBD5" /> : <Play size={11} fill="#F5DBD5" />}
-          <span>{isPlaying ? (lang === 'hi' ? 'रोकें' : 'Pause') : (lang === 'hi' ? 'चलाएं' : 'Play')}</span>
-        </button>
-      </div>
     </div>
   )
 }
