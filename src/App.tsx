@@ -117,31 +117,31 @@ const certifications = [
     title: 'Python for Data Science',
     titleHi: 'पाइथन फॉर डेटा साइंस',
     issuer: 'NPTEL — IIT Madras',
-    date: 'April 2024',
+    date: 'April 2026',
     link: 'https://drive.google.com/file/d/129esc7_P75SsjB8D_p7F77VLrfqwu9gl/view?usp=drivesdk',
-    score: '83% (Elite Gold · Top 1%)',
+    score: '83% (Course Topper · Top 2%)',
     description:
-      'Comprehensive data science coursework covering data manipulation with Pandas and NumPy, data visualization, and applied machine learning models.',
+      'Scored 83% to finish as Course Topper (Top 2%). Demonstrated high proficiency in advanced dataset manipulation with Pandas, statistical visualization with Matplotlib and Seaborn, and predictive modeling with Scikit-Learn.',
   },
   {
-    title: 'Programming in Python',
-    titleHi: 'प्रोग्रामिंग इन पाइथन',
-    issuer: 'NPTEL',
-    date: 'Certified',
+    title: 'Python Foundation Certification',
+    titleHi: 'पाइथन फाउंडेशन सर्टिफिकेशन',
+    issuer: 'Infosys',
+    date: 'January 2026',
     link: 'https://drive.google.com/file/d/1faWANaSfdHVw-NuoBNUGa8uKIgCTwtzb/view?usp=drivesdk',
-    score: 'Certified Grade',
+    score: 'Foundation Certified',
     description:
-      'In-depth training in Python programming, fundamental data structures, algorithm design, and computational problem solving.',
+      'Mastered core language syntax, control structures, and object-oriented programming (OOP). Applied algorithmic thinking and debugging practices to optimize script performance.',
   },
   {
     title: 'Artificial Intelligence Foundation',
     titleHi: 'आर्टिफिशियल इंटेलिजेंस फाउंडेशन',
-    issuer: 'Certified Training Program',
-    date: 'Certified',
+    issuer: 'Infosys',
+    date: 'January 2026',
     link: 'https://drive.google.com/file/d/1ZXgpFm-6zOqmFNNEhPzyS7yEOvrnaNBO/view?usp=drivesdk',
-    score: 'Advanced Grade',
+    score: 'Foundation Certified',
     description:
-      'Foundational concepts of artificial intelligence, search algorithms, knowledge representation, and machine learning paradigms.',
+      'Comprehensive training in regression models, supervised classification workflows, neural network architectures, and natural language processing applications.',
   },
 ]
 
@@ -663,7 +663,7 @@ export default function App() {
                     lineHeight: 1,
                   }}
                 >
-                  Top 1%
+                  Top 2%
                 </div>
                 <div>
                   <h3
@@ -679,8 +679,8 @@ export default function App() {
                   </h3>
                   <p style={{ margin: 0, fontSize: '0.92rem', color: theme.subTextColor, lineHeight: 1.55 }}>
                     {lang === 'hi'
-                      ? "'Python for Data Science' कोर्स में 83% एलिट गोल्ड स्कोर के साथ टॉप 1% में।"
-                      : 'Achieved an 83% Elite Gold score in the Python for Data Science certification.'}
+                      ? "'Python for Data Science' कोर्स में 83% स्कोर के साथ NPTEL IIT मद्रास टॉपर (Top 2%)।"
+                      : 'Scored 83% to finish as Course Topper (Top 2%) in the Python for Data Science certification.'}
                   </p>
                 </div>
               </div>
@@ -755,7 +755,7 @@ export default function App() {
                     lineHeight: 1,
                   }}
                 >
-                  7.64
+                  7.96
                 </div>
                 <div>
                   <h3
@@ -771,8 +771,8 @@ export default function App() {
                   </h3>
                   <p style={{ margin: 0, fontSize: '0.92rem', color: theme.subTextColor, lineHeight: 1.55 }}>
                     {lang === 'hi'
-                      ? 'एक्रोपोलिस इंस्टीट्यूट ऑफ टेक्नोलॉजी एंड रिसर्च में एआई & एमएल ब्रांच।'
-                      : 'B.Tech in Artificial Intelligence & Machine Learning at Acropolis Institute (2022–2026).'}
+                      ? 'एक्रोपोलिस इंस्टीट्यूट ऑफ टेक्नोलॉजी एंड रिसर्च से बी.टेक एआई & एमएल (2024–2028)।'
+                      : 'B.Tech in Artificial Intelligence & Machine Learning at Acropolis Institute (2024–2028).'}
                   </p>
                 </div>
               </div>
@@ -1342,8 +1342,8 @@ export default function App() {
             >
               <p style={{ margin: 0, fontSize: '1.05rem', lineHeight: 1.75 }}>
                 {lang === 'hi'
-                  ? 'मैं एक्रोपोलिस इंस्टीट्यूट ऑफ टेक्नोलॉजी एंड रिसर्च, इंदौर में आर्टिफिशियल इंटेलिजेंस और मशीन लर्निंग का बी.टेक छात्र हूँ (2022–2026)। मैं मशीन लर्निंग मॉडल्स, अनुशंसा प्रणालियों और आधुनिक वेब एप्लिकेशन्स को विकसित करने में रुचि रखता हूँ। कोडिंग के अतिरिक्त, मैं मानसिक दृढ़ता और एकाग्रता के लिए नियमित लंबी दूरी की दौड़ का अभ्यास करता हूँ।'
-                  : 'I am a B.Tech student in Artificial Intelligence and Machine Learning at Acropolis Institute of Technology and Research, Indore (2022–2026). I build predictive machine learning models, recommender systems, and responsive web applications. Outside of technology, I regularly practice long-distance running to cultivate discipline, consistency, and focus.'}
+                  ? 'मैं एक्रोपोलिस इंस्टीट्यूट ऑफ टेक्नोलॉजी एंड रिसर्च, इंदौर में आर्टिफिशियल इंटेलिजेंस और मशीन लर्निंग का बी.टेक छात्र हूँ (2024–2028, वर्तमान सीजीपीए: 7.96)। मैंने 12वीं में 85.4% अंक प्राप्त किए तथा NPTEL IIT मद्रास डेटा साइंस में 83% स्कोर के साथ टॉप 2% टॉपर रहा। मैं मशीन लर्निंग मॉडल्स, अनुशंसा प्रणालियों और सर्वरलेस एआई एप्लिकेशन्स विकसित करता हूँ। इसके अलावा, मैंने IEEE ICIH 2025 में टेक्निकल टीम और विजुअल डिज़ाइनर के रूप में योगदान दिया। अनुशासन और दृढ़ता के लिए मैं नियमित लंबी दूरी की दौड़ का अभ्यास करता हूँ।'
+                  : 'I am a B.Tech student in Artificial Intelligence and Machine Learning at Acropolis Institute of Technology and Research, Indore (August 2024 – August 2028) maintaining a strong 7.96 CGPA. Recognized as an NPTEL IIT Madras Course Topper (Top 2% with 83% score), I specialize in predictive modeling, recommender algorithms, and serverless AI applications. I also served as a Technical Team Member & Visual Designer for the IEEE ICIH 2025 international conference. Outside of engineering, I practice regular long-distance running to sharpen physical endurance, focus, and resilience.'}
               </p>
             </div>
           </div>
