@@ -127,92 +127,50 @@ export const Chatbox = ({ currentTheme, lang, isOpen: controlledIsOpen, onToggle
 
   return (
     <>
-      {/* Floating Trigger Button Featuring AI Avatar */}
+      {/* Standalone 3D AI Personal Assistant (No container box, sitting alone in the corner) */}
       <button
         onClick={toggleChat}
-        aria-label="Open AI Assistant"
+        aria-label="Open AI Personal Assistant"
         style={{
           position: 'fixed',
-          bottom: '28px',
-          right: '28px',
+          bottom: 0,
+          right: isChatOpen ? 'calc(min(440px, calc(100vw - 32px)) + 36px)' : 'clamp(16px, 3.5vw, 40px)',
           zIndex: 9999,
-          display: 'flex',
-          alignItems: 'center',
-          gap: '12px',
-          padding: '8px 18px 8px 8px',
-          borderRadius: '9999px',
-          backgroundColor: 'rgba(57, 19, 27, 0.94)',
-          color: '#FFFFFF',
-          border: `1.5px solid ${currentTheme.hairlineBorder}`,
-          boxShadow: '0 14px 38px rgba(10, 2, 4, 0.65)',
+          background: 'none',
+          backgroundColor: 'transparent',
+          border: 'none',
+          outline: 'none',
+          boxShadow: 'none',
+          padding: 0,
+          margin: 0,
           cursor: 'pointer',
-          fontFamily: "'Plus Jakarta Sans', sans-serif",
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
-          transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
+        className={isChatOpen ? 'hidden md:flex' : 'flex'}
         onMouseEnter={(e) => {
-          e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)'
-          e.currentTarget.style.borderColor = currentTheme.primary
+          e.currentTarget.style.transform = 'translateY(-8px) scale(1.05)'
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.transform = 'translateY(0) scale(1.0)'
-          e.currentTarget.style.borderColor = currentTheme.hairlineBorder
         }}
       >
-        {/* User's 3D AI Avatar */}
-        <div style={{ position: 'relative', width: '40px', height: '40px', flexShrink: 0 }}>
+        <div style={{ position: 'relative' }}>
           <img
-            src="/ai-avatar.jpg"
-            alt="AI Assistant Avatar"
+            src="/ai-avatar.png"
+            alt="AI Personal Assistant"
             style={{
-              width: '40px',
-              height: '40px',
-              borderRadius: '50%',
-              objectFit: 'cover',
-              border: `1.5px solid ${currentTheme.primary}`,
-              boxShadow: '0 4px 14px rgba(0,0,0,0.4)',
               display: 'block',
+              width: 'clamp(95px, 9vw, 130px)',
+              height: 'auto',
+              filter:
+                'drop-shadow(0 14px 28px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 20px rgba(212, 155, 158, 0.28))',
+              userSelect: 'none',
+              pointerEvents: 'auto',
             }}
           />
-          {/* Active Status Pulse */}
-          <span
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              right: 0,
-              width: '10px',
-              height: '10px',
-              borderRadius: '50%',
-              backgroundColor: '#22c55e',
-              border: '2px solid #260B0F',
-              boxShadow: '0 0 8px rgba(34, 197, 94, 0.8)',
-            }}
-          />
-        </div>
-
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left' }}>
-          <span
-            style={{
-              fontSize: '0.88rem',
-              fontWeight: 700,
-              color: '#FFFFFF',
-              lineHeight: 1.2,
-            }}
-          >
-            {lang === 'hi' ? 'एआई असिस्टेंट' : 'AI Assistant'}
-          </span>
-          <span
-            style={{
-              fontSize: '0.7rem',
-              color: currentTheme.subTextColor,
-              fontWeight: 500,
-              lineHeight: 1.2,
-              marginTop: '2px',
-            }}
-          >
-            {lang === 'hi' ? 'ऑनलाइन · पूछें कुछ भी' : 'Online · Ask anything'}
-          </span>
         </div>
       </button>
 
