@@ -835,134 +835,103 @@ export default function App() {
               </p>
             </div>
 
-            {/* Asymmetrical Editorial Project Showcase */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-              {projects.map((proj, idx) => {
-                const isEven = idx % 2 === 0
-                return (
+            {/* Bento Grid Projects Showcase (Echoing the Asymmetric Reference Layout) */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+              {/* =========================================================================
+                  LEFT BENTO BLOCK: 2 Asymmetric Rows + Full-Width Philosophy Banner
+                  ========================================================================= */}
+              <div className="lg:col-span-7 flex flex-col gap-5 justify-between">
+                {/* Row 1: Asymmetric Split (Laptop Recommender [5 cols] + Books Recommender [7 cols]) */}
+                <div className="grid grid-cols-1 sm:grid-cols-12 gap-5">
+                  {/* Card 1: Laptop Recommender System */}
                   <div
-                    key={proj.title}
                     style={{
-                      borderRadius: '32px',
+                      borderRadius: '28px',
                       backgroundColor: theme.cardBg,
                       border: `1px solid ${theme.hairlineBorder}`,
-                      padding: 'clamp(1.25rem, 3vw, 2.25rem)',
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(12, 1fr)',
-                      gap: 'clamp(1.75rem, 3.5vw, 3rem)',
-                      alignItems: 'center',
-                      boxShadow: '0 20px 50px -15px rgba(10, 2, 4, 0.65)',
+                      padding: '1.5rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      boxShadow: '0 14px 34px rgba(10, 2, 4, 0.45)',
                       backdropFilter: 'blur(16px)',
+                      transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease',
                     }}
+                    className="sm:col-span-5 hover:-translate-y-1 hover:border-[#D49B9E]/50 group"
                   >
-                    {/* Media Frame with Generated Artwork */}
-                    <div
-                      style={{
-                        gridColumn: 'span 12',
-                        order: isEven ? 1 : 2,
-                        borderRadius: '22px',
-                        overflow: 'hidden',
-                        position: 'relative',
-                        backgroundColor: '#1E070B',
-                        border: `1px solid ${theme.hairlineBorder}`,
-                      }}
-                      className="lg:col-span-7"
-                    >
-                      <img
-                        src={proj.image}
-                        alt={proj.title}
-                        style={{
-                          width: '100%',
-                          height: 'clamp(280px, 34vw, 440px)',
-                          objectFit: 'cover',
-                          display: 'block',
-                          transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-                        }}
-                        onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.03)')}
-                        onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1.0)')}
-                      />
+                    <div>
                       <div
                         style={{
-                          position: 'absolute',
-                          bottom: '16px',
-                          left: '16px',
-                          padding: '6px 14px',
-                          borderRadius: '9999px',
-                          backgroundColor: 'rgba(38, 11, 15, 0.85)',
-                          backdropFilter: 'blur(10px)',
+                          borderRadius: '18px',
+                          overflow: 'hidden',
+                          marginBottom: '1rem',
+                          border: `1px solid ${theme.hairlineBorder}`,
+                          backgroundColor: '#1E070B',
+                        }}
+                      >
+                        <img
+                          src={projects[1].image}
+                          alt={projects[1].title}
+                          style={{
+                            width: '100%',
+                            height: '140px',
+                            objectFit: 'cover',
+                            display: 'block',
+                            transition: 'transform 0.5s ease',
+                          }}
+                          className="group-hover:scale-105"
+                        />
+                      </div>
+                      <div
+                        style={{
                           fontSize: '0.72rem',
-                          fontWeight: 600,
+                          fontWeight: 700,
                           letterSpacing: '0.08em',
                           textTransform: 'uppercase',
                           color: theme.primary,
-                          border: `1px solid ${theme.hairlineBorder}`,
+                          marginBottom: '0.3rem',
                         }}
                       >
-                        {proj.tags[0]}
+                        {lang === 'hi' ? 'एमएल वेब ऐप' : 'ML · Streamlit'}
                       </div>
-                    </div>
-
-                    {/* Content Block */}
-                    <div
-                      style={{
-                        gridColumn: 'span 12',
-                        order: isEven ? 2 : 1,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '1.25rem',
-                      }}
-                      className="lg:col-span-5"
-                    >
-                      <div>
-                        <div
-                          style={{
-                            fontSize: '0.85rem',
-                            fontWeight: 600,
-                            color: theme.primary,
-                            marginBottom: '0.35rem',
-                          }}
-                        >
-                          {lang === 'hi' ? proj.categoryHi : proj.category}
-                        </div>
-                        <h3
-                          style={{
-                            fontFamily: lang === 'hi' ? "'Rozha One', serif" : "'Playfair Display', serif",
-                            fontSize: 'clamp(1.85rem, 3.2vw, 2.45rem)',
-                            fontWeight: 800,
-                            letterSpacing: '-0.02em',
-                            color: theme.secondary,
-                            margin: 0,
-                          }}
-                        >
-                          {proj.title}
-                        </h3>
-                      </div>
-
+                      <h3
+                        style={{
+                          fontFamily: lang === 'hi' ? "'Rozha One', serif" : "'Playfair Display', serif",
+                          fontSize: '1.25rem',
+                          fontWeight: 700,
+                          color: theme.secondary,
+                          margin: '0 0 0.5rem 0',
+                          lineHeight: 1.25,
+                        }}
+                      >
+                        {projects[1].title}
+                      </h3>
                       <p
                         style={{
                           margin: 0,
-                          fontSize: '0.98rem',
+                          fontSize: '0.85rem',
                           color: theme.subTextColor,
-                          lineHeight: 1.65,
+                          lineHeight: 1.5,
                         }}
                       >
-                        {lang === 'hi' ? proj.descriptionHi : proj.description}
+                        {lang === 'hi'
+                          ? 'उपयोगकर्ता बजट और हार्डवेयर विनिर्देशों के आधार पर उपयुक्त लैपटॉप की सिफारिश।'
+                          : 'Multi-criteria recommendation engine deployed live on Hugging Face Spaces.'}
                       </p>
+                    </div>
 
-                      {/* Pill Tags */}
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                        {proj.tags.map((tag) => (
+                    <div style={{ marginTop: '1.25rem' }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1rem' }}>
+                        {projects[1].tags.slice(0, 3).map((tag) => (
                           <span
                             key={tag}
                             style={{
-                              padding: '5px 14px',
+                              padding: '3px 10px',
                               borderRadius: '9999px',
                               backgroundColor: 'rgba(72, 25, 35, 0.6)',
                               border: `1px solid ${theme.hairlineBorder}`,
-                              fontSize: '0.72rem',
+                              fontSize: '0.68rem',
                               fontWeight: 600,
-                              letterSpacing: '0.04em',
-                              textTransform: 'uppercase',
                               color: theme.secondary,
                             }}
                           >
@@ -970,36 +939,621 @@ export default function App() {
                           </span>
                         ))}
                       </div>
-
-                      {/* Action Link */}
-                      <div style={{ paddingTop: '0.5rem' }}>
-                        <a
-                          href={proj.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '8px',
-                            textDecoration: 'none',
-                            fontSize: '0.82rem',
-                            fontWeight: 700,
-                            letterSpacing: '0.06em',
-                            textTransform: 'uppercase',
-                            color: theme.primary,
-                            borderBottom: `1.5px solid ${theme.primary}`,
-                            paddingBottom: '4px',
-                            transition: 'opacity 0.2s ease',
-                          }}
-                        >
-                          <span>{lang === 'hi' ? 'लाइव डेमो / कोड देखें' : 'View Live Project'}</span>
-                          <ArrowUpRight size={16} />
-                        </a>
-                      </div>
+                      <a
+                        href={projects[1].link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          textDecoration: 'none',
+                          fontSize: '0.76rem',
+                          fontWeight: 700,
+                          letterSpacing: '0.06em',
+                          textTransform: 'uppercase',
+                          color: theme.primary,
+                        }}
+                      >
+                        <span>{lang === 'hi' ? 'हगिंग फेस पर देखें' : 'Open Space'}</span>
+                        <ArrowUpRight size={14} />
+                      </a>
                     </div>
                   </div>
-                )
-              })}
+
+                  {/* Card 2: Books Recommender Engine */}
+                  <div
+                    style={{
+                      borderRadius: '28px',
+                      backgroundColor: theme.cardBg,
+                      border: `1px solid ${theme.hairlineBorder}`,
+                      padding: '1.5rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      boxShadow: '0 14px 34px rgba(10, 2, 4, 0.45)',
+                      backdropFilter: 'blur(16px)',
+                      transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease',
+                    }}
+                    className="sm:col-span-7 hover:-translate-y-1 hover:border-[#D49B9E]/50 group"
+                  >
+                    <div>
+                      <div
+                        style={{
+                          borderRadius: '18px',
+                          overflow: 'hidden',
+                          marginBottom: '1rem',
+                          border: `1px solid ${theme.hairlineBorder}`,
+                          backgroundColor: '#1E070B',
+                        }}
+                      >
+                        <img
+                          src={projects[2].image}
+                          alt={projects[2].title}
+                          style={{
+                            width: '100%',
+                            height: '140px',
+                            objectFit: 'cover',
+                            display: 'block',
+                            transition: 'transform 0.5s ease',
+                          }}
+                          className="group-hover:scale-105"
+                        />
+                      </div>
+                      <div
+                        style={{
+                          fontSize: '0.72rem',
+                          fontWeight: 700,
+                          letterSpacing: '0.08em',
+                          textTransform: 'uppercase',
+                          color: theme.primary,
+                          marginBottom: '0.3rem',
+                        }}
+                      >
+                        {lang === 'hi' ? 'नेचुरल लैंग्वेज प्रोसेसिंग' : 'NLP · Vector Math'}
+                      </div>
+                      <h3
+                        style={{
+                          fontFamily: lang === 'hi' ? "'Rozha One', serif" : "'Playfair Display', serif",
+                          fontSize: '1.25rem',
+                          fontWeight: 700,
+                          color: theme.secondary,
+                          margin: '0 0 0.5rem 0',
+                          lineHeight: 1.25,
+                        }}
+                      >
+                        {projects[2].title}
+                      </h3>
+                      <p
+                        style={{
+                          margin: 0,
+                          fontSize: '0.85rem',
+                          color: theme.subTextColor,
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        {lang === 'hi'
+                          ? 'कोसाइन सिमिलैरिटी और कैगल डेटासेट से 2,000+ पुस्तकों की वेक्टर अनुशंसा।'
+                          : 'Content-based filtering using Cosine Similarity matrices across 2,000+ Kaggle titles.'}
+                      </p>
+                    </div>
+
+                    <div style={{ marginTop: '1.25rem' }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1rem' }}>
+                        {projects[2].tags.map((tag) => (
+                          <span
+                            key={tag}
+                            style={{
+                              padding: '3px 10px',
+                              borderRadius: '9999px',
+                              backgroundColor: 'rgba(72, 25, 35, 0.6)',
+                              border: `1px solid ${theme.hairlineBorder}`,
+                              fontSize: '0.68rem',
+                              fontWeight: 600,
+                              color: theme.secondary,
+                            }}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <a
+                        href={projects[2].link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          textDecoration: 'none',
+                          fontSize: '0.76rem',
+                          fontWeight: 700,
+                          letterSpacing: '0.06em',
+                          textTransform: 'uppercase',
+                          color: theme.primary,
+                        }}
+                      >
+                        <span>{lang === 'hi' ? 'गिटहब कोड देखें' : 'View Code'}</span>
+                        <ArrowUpRight size={14} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Row 2: Inverted Asymmetric Split (Sortify [7 cols] + Distinction Accent [5 cols]) */}
+                <div className="grid grid-cols-1 sm:grid-cols-12 gap-5">
+                  {/* Card 3: Sortify — Algorithm Visualizer */}
+                  <div
+                    style={{
+                      borderRadius: '28px',
+                      backgroundColor: theme.cardBg,
+                      border: `1px solid ${theme.hairlineBorder}`,
+                      padding: '1.5rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      boxShadow: '0 14px 34px rgba(10, 2, 4, 0.45)',
+                      backdropFilter: 'blur(16px)',
+                      transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease',
+                    }}
+                    className="sm:col-span-7 hover:-translate-y-1 hover:border-[#D49B9E]/50 group"
+                  >
+                    <div>
+                      <div
+                        style={{
+                          borderRadius: '18px',
+                          overflow: 'hidden',
+                          marginBottom: '1rem',
+                          border: `1px solid ${theme.hairlineBorder}`,
+                          backgroundColor: '#1E070B',
+                        }}
+                      >
+                        <img
+                          src={projects[3].image}
+                          alt={projects[3].title}
+                          style={{
+                            width: '100%',
+                            height: '140px',
+                            objectFit: 'cover',
+                            display: 'block',
+                            transition: 'transform 0.5s ease',
+                          }}
+                          className="group-hover:scale-105"
+                        />
+                      </div>
+                      <div
+                        style={{
+                          fontSize: '0.72rem',
+                          fontWeight: 700,
+                          letterSpacing: '0.08em',
+                          textTransform: 'uppercase',
+                          color: theme.primary,
+                          marginBottom: '0.3rem',
+                        }}
+                      >
+                        {lang === 'hi' ? 'डेटा स्ट्रक्चर्स & एल्गोरिदम' : 'Real-Time Algorithms'}
+                      </div>
+                      <h3
+                        style={{
+                          fontFamily: lang === 'hi' ? "'Rozha One', serif" : "'Playfair Display', serif",
+                          fontSize: '1.25rem',
+                          fontWeight: 700,
+                          color: theme.secondary,
+                          margin: '0 0 0.5rem 0',
+                          lineHeight: 1.25,
+                        }}
+                      >
+                        {projects[3].title}
+                      </h3>
+                      <p
+                        style={{
+                          margin: 0,
+                          fontSize: '0.85rem',
+                          color: theme.subTextColor,
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        {lang === 'hi'
+                          ? 'बबल सॉर्ट, मर्ज सॉर्ट और क्विक सॉर्ट के इंटरएक्टिव रीयल-टाइम विजुअल एनिमेशन्स।'
+                          : 'Interactive step-by-step visual animations for classic sorting algorithms with dynamic controls.'}
+                      </p>
+                    </div>
+
+                    <div style={{ marginTop: '1.25rem' }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1rem' }}>
+                        {projects[3].tags.map((tag) => (
+                          <span
+                            key={tag}
+                            style={{
+                              padding: '3px 10px',
+                              borderRadius: '9999px',
+                              backgroundColor: 'rgba(72, 25, 35, 0.6)',
+                              border: `1px solid ${theme.hairlineBorder}`,
+                              fontSize: '0.68rem',
+                              fontWeight: 600,
+                              color: theme.secondary,
+                            }}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <a
+                        href={projects[3].link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          textDecoration: 'none',
+                          fontSize: '0.76rem',
+                          fontWeight: 700,
+                          letterSpacing: '0.06em',
+                          textTransform: 'uppercase',
+                          color: theme.primary,
+                        }}
+                      >
+                        <span>{lang === 'hi' ? 'लाइव डेमो चलाएं' : 'Run Visualizer'}</span>
+                        <ArrowUpRight size={14} />
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Card 4: Distinction & Engineering Practicum Accent Badge */}
+                  <div
+                    style={{
+                      borderRadius: '28px',
+                      background:
+                        'radial-gradient(circle at 50% 25%, rgba(212, 155, 158, 0.22) 0%, rgba(57, 19, 27, 0.9) 100%)',
+                      border: `1.5px solid rgba(212, 155, 158, 0.35)`,
+                      padding: '1.75rem 1.5rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      boxShadow: '0 14px 34px rgba(10, 2, 4, 0.55)',
+                      backdropFilter: 'blur(20px)',
+                      transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                    }}
+                    className="sm:col-span-5 hover:-translate-y-1 group"
+                  >
+                    <div>
+                      <div
+                        style={{
+                          display: 'inline-block',
+                          padding: '4px 12px',
+                          borderRadius: '9999px',
+                          backgroundColor: 'rgba(212, 155, 158, 0.15)',
+                          fontSize: '0.7rem',
+                          fontWeight: 700,
+                          letterSpacing: '0.08em',
+                          textTransform: 'uppercase',
+                          color: theme.primary,
+                          marginBottom: '1rem',
+                        }}
+                      >
+                        {lang === 'hi' ? 'आईआईटी मद्रास उपलब्धि' : 'Academic Distinction'}
+                      </div>
+                      <div
+                        style={{
+                          fontFamily: "'Oswald', 'Syne', sans-serif",
+                          fontSize: 'clamp(2.5rem, 4.5vw, 3.2rem)',
+                          fontWeight: 700,
+                          letterSpacing: '-0.02em',
+                          color: theme.primary,
+                          lineHeight: 1,
+                          marginBottom: '0.35rem',
+                        }}
+                      >
+                        Top 2%
+                      </div>
+                      <h4
+                        style={{
+                          fontFamily: "'Playfair Display', serif",
+                          fontSize: '1.15rem',
+                          fontWeight: 700,
+                          color: theme.secondary,
+                          margin: '0 0 0.5rem 0',
+                        }}
+                      >
+                        {lang === 'hi' ? 'NPTEL कोर्स टॉपर' : 'NPTEL Course Topper'}
+                      </h4>
+                      <p
+                        style={{
+                          margin: 0,
+                          fontSize: '0.82rem',
+                          color: theme.subTextColor,
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        {lang === 'hi'
+                          ? 'Python for Data Science में 83% एलिट स्कोर के साथ शीर्ष 2% में स्थान।'
+                          : 'Scored 83% in Python for Data Science with NPTEL IIT Madras.'}
+                      </p>
+                    </div>
+
+                    <div
+                      style={{
+                        paddingTop: '1rem',
+                        borderTop: `1px solid ${theme.hairlineBorder}`,
+                        fontSize: '0.72rem',
+                        color: theme.secondary,
+                        fontWeight: 600,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                      }}
+                    >
+                      <span>4+ Deployed ML Works</span>
+                      <span style={{ color: theme.primary }}>Verified ✓</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Row 3: Full-Width Engineering Practicum Banner (Matching Reference Layout) */}
+                <div
+                  style={{
+                    borderRadius: '28px',
+                    backgroundColor: 'rgba(47, 14, 20, 0.95)',
+                    border: `1.5px solid ${theme.hairlineBorder}`,
+                    padding: 'clamp(1.25rem, 2.5vw, 1.85rem) clamp(1.5rem, 3vw, 2.25rem)',
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '1.25rem',
+                    boxShadow: '0 12px 30px rgba(10, 2, 4, 0.5)',
+                  }}
+                >
+                  <div style={{ maxWidth: '620px' }}>
+                    <h4
+                      style={{
+                        fontFamily: lang === 'hi' ? "'Rozha One', serif" : "'Playfair Display', serif",
+                        fontSize: 'clamp(1.15rem, 2vw, 1.45rem)',
+                        fontWeight: 800,
+                        letterSpacing: '-0.01em',
+                        color: theme.secondary,
+                        margin: '0 0 0.35rem 0',
+                      }}
+                    >
+                      {lang === 'hi'
+                        ? 'गणितीय वेक्टर्स से स्वायत्त बुद्धिमत्ता तक'
+                        : 'FROM MATHEMATICAL VECTORS TO AUTONOMOUS INTELLIGENCE'}
+                    </h4>
+                    <p
+                      style={{
+                        margin: 0,
+                        fontSize: '0.86rem',
+                        color: theme.subTextColor,
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      {lang === 'hi'
+                        ? 'सभी 4 प्रणालियां पुनरुत्पादक एमएल पाइपलाइन्स, सर्वरलेस क्लाउड आर्किटेक्चर और मानवीय डिज़ाइन के साथ निर्मित हैं।'
+                        : 'Practical engineering systems built with reproducible ML pipelines, serverless architectures, and user-centered design.'}
+                    </p>
+                  </div>
+
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                    <a
+                      href="https://github.com/deepesh-45"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        padding: '8px 16px',
+                        borderRadius: '9999px',
+                        backgroundColor: 'rgba(57, 19, 27, 0.9)',
+                        border: `1px solid ${theme.hairlineBorder}`,
+                        color: theme.secondary,
+                        fontSize: '0.74rem',
+                        fontWeight: 600,
+                        textDecoration: 'none',
+                      }}
+                    >
+                      <Github size={13} />
+                      <span>GitHub: deepesh-45</span>
+                    </a>
+                    <a
+                      href="https://deepesh-45-my-laptop.hf.space/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        padding: '8px 16px',
+                        borderRadius: '9999px',
+                        backgroundColor: 'rgba(57, 19, 27, 0.9)',
+                        border: `1px solid ${theme.hairlineBorder}`,
+                        color: theme.secondary,
+                        fontSize: '0.74rem',
+                        fontWeight: 600,
+                        textDecoration: 'none',
+                      }}
+                    >
+                      <Globe size={13} />
+                      <span>Hugging Face</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* =========================================================================
+                  RIGHT BENTO BLOCK: TALL FULL-HEIGHT HERO SHOWCASE (Reflect AI Flagship)
+                  ========================================================================= */}
+              <div
+                style={{
+                  borderRadius: '32px',
+                  background:
+                    'radial-gradient(circle at 50% 15%, rgba(212, 155, 158, 0.16) 0%, rgba(57, 19, 27, 0.88) 100%)',
+                  border: `1.5px solid rgba(212, 155, 158, 0.32)`,
+                  padding: 'clamp(1.75rem, 3vw, 2.5rem)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 25px 60px -15px rgba(10, 2, 4, 0.75)',
+                  backdropFilter: 'blur(20px)',
+                  transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease',
+                }}
+                className="lg:col-span-5 hover:-translate-y-1 hover:border-[#D49B9E]/60 group"
+              >
+                <div>
+                  {/* Top Header Badge */}
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
+                    <div
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        padding: '5px 14px',
+                        borderRadius: '9999px',
+                        backgroundColor: 'rgba(212, 155, 158, 0.15)',
+                        border: `1px solid rgba(212, 155, 158, 0.35)`,
+                        fontSize: '0.72rem',
+                        fontWeight: 700,
+                        letterSpacing: '0.08em',
+                        textTransform: 'uppercase',
+                        color: theme.primary,
+                      }}
+                    >
+                      <span>★</span>
+                      <span>{lang === 'hi' ? 'प्रमुख एआई साथी' : 'Flagship AI Companion'}</span>
+                    </div>
+                    <span
+                      style={{
+                        fontSize: '0.75rem',
+                        fontWeight: 600,
+                        color: theme.subTextColor,
+                      }}
+                    >
+                      June 2026
+                    </span>
+                  </div>
+
+                  <h3
+                    style={{
+                      fontFamily: lang === 'hi' ? "'Rozha One', serif" : "'Playfair Display', serif",
+                      fontSize: 'clamp(1.85rem, 2.8vw, 2.35rem)',
+                      fontWeight: 800,
+                      letterSpacing: '-0.02em',
+                      color: theme.secondary,
+                      margin: '0 0 0.5rem 0',
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {projects[0].title}
+                  </h3>
+
+                  <p
+                    style={{
+                      margin: '0 0 1.5rem 0',
+                      fontSize: '0.94rem',
+                      color: theme.subTextColor,
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {lang === 'hi' ? projects[0].descriptionHi : projects[0].description}
+                  </p>
+
+                  {/* Monumental Artwork Preview Container */}
+                  <div
+                    style={{
+                      borderRadius: '24px',
+                      overflow: 'hidden',
+                      position: 'relative',
+                      border: `1px solid ${theme.hairlineBorder}`,
+                      backgroundColor: '#1E070B',
+                      boxShadow: '0 16px 40px rgba(10, 2, 4, 0.6)',
+                      marginBottom: '1.5rem',
+                    }}
+                  >
+                    <img
+                      src={projects[0].image}
+                      alt={projects[0].title}
+                      style={{
+                        width: '100%',
+                        height: 'clamp(240px, 28vw, 360px)',
+                        objectFit: 'cover',
+                        display: 'block',
+                        transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                      }}
+                      className="group-hover:scale-105"
+                    />
+                    <div
+                      style={{
+                        position: 'absolute',
+                        bottom: '14px',
+                        left: '14px',
+                        padding: '6px 14px',
+                        borderRadius: '9999px',
+                        backgroundColor: 'rgba(38, 11, 15, 0.88)',
+                        backdropFilter: 'blur(12px)',
+                        fontSize: '0.72rem',
+                        fontWeight: 600,
+                        letterSpacing: '0.06em',
+                        color: theme.primary,
+                        border: `1px solid ${theme.hairlineBorder}`,
+                      }}
+                    >
+                      Gemini API · Cloud Firestore
+                    </div>
+                  </div>
+
+                  {/* Pill Tags */}
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '1.5rem' }}>
+                    {projects[0].tags.map((tag) => (
+                      <span
+                        key={tag}
+                        style={{
+                          padding: '5px 13px',
+                          borderRadius: '9999px',
+                          backgroundColor: 'rgba(72, 25, 35, 0.6)',
+                          border: `1px solid ${theme.hairlineBorder}`,
+                          fontSize: '0.72rem',
+                          fontWeight: 600,
+                          letterSpacing: '0.04em',
+                          textTransform: 'uppercase',
+                          color: theme.secondary,
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Big Glowing Launch Action Button */}
+                <a
+                  href={projects[0].link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '10px',
+                    width: '100%',
+                    padding: '14px 24px',
+                    borderRadius: '9999px',
+                    backgroundColor: theme.ctaRose,
+                    color: '#FFFFFF',
+                    fontSize: '0.86rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.06em',
+                    textTransform: 'uppercase',
+                    textDecoration: 'none',
+                    boxShadow: '0 12px 30px rgba(184, 114, 119, 0.45)',
+                    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                  }}
+                  className="hover:bg-[#C88085] hover:scale-[1.02]"
+                >
+                  <span>{lang === 'hi' ? 'लाइव वेब ऐप खोलें' : 'Launch Reflect AI Web App'}</span>
+                  <ArrowUpRight size={18} />
+                </a>
+              </div>
             </div>
           </div>
         </section>
