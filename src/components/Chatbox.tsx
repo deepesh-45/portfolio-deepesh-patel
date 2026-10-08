@@ -158,15 +158,16 @@ export const Chatbox = ({ currentTheme, lang, isOpen: controlledIsOpen, onToggle
         }}
       >
         <div style={{ position: 'relative' }}>
+          {/* Animated 3D Avatar waving hello - doubled size */}
           <img
-            src="/ai-avatar.png"
-            alt="AI Personal Assistant"
+            src="/ai-avatar-wave.webp"
+            alt="AI Personal Assistant Waving Hello"
             style={{
               display: 'block',
-              width: 'clamp(95px, 9vw, 130px)',
+              width: 'clamp(190px, 18vw, 260px)',
               height: 'auto',
               filter:
-                'drop-shadow(0 14px 28px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 20px rgba(212, 155, 158, 0.28))',
+                'drop-shadow(0 18px 36px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 24px rgba(212, 155, 158, 0.32))',
               userSelect: 'none',
               pointerEvents: 'auto',
             }}
